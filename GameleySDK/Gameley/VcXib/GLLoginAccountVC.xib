@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLLoginAccountVC" customModule="GameleySDK" customModuleProvider="target">
+            <connections>
+                <outlet property="loginAccount" destination="UYh-fB-agZ" id="3FO-xT-jcL"/>
+                <outlet property="loginPassword" destination="bJX-uG-rL0" id="Ufa-M6-okt"/>
+                <outlet property="view" destination="dlm-4k-iWz" id="pcv-0d-IlE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dlm-4k-iWz">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="登录名/手机号/邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UYh-fB-agZ">
+                    <rect key="frame" x="0.0" y="10" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="vpf-cM-rnP"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJX-uG-rL0">
+                    <rect key="frame" x="0.0" y="60" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cKX-dZ-d59"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iM0-sO-Osb">
+                    <rect key="frame" x="0.0" y="110" width="300" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="80U-4o-QxB"/>
+                    </constraints>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginNormal:" destination="-1" eventType="touchUpInside" id="RXU-pE-uf9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="UYh-fB-agZ" firstAttribute="top" secondItem="MP1-hv-bJu" secondAttribute="top" constant="10" id="8PB-38-QaQ"/>
+                <constraint firstItem="MP1-hv-bJu" firstAttribute="trailing" secondItem="UYh-fB-agZ" secondAttribute="trailing" id="AjA-tA-aOZ"/>
+                <constraint firstItem="iM0-sO-Osb" firstAttribute="top" secondItem="bJX-uG-rL0" secondAttribute="bottom" constant="10" id="DCo-CM-ChQ"/>
+                <constraint firstItem="bJX-uG-rL0" firstAttribute="top" secondItem="UYh-fB-agZ" secondAttribute="bottom" constant="10" id="Q7b-uM-f85"/>
+                <constraint firstItem="MP1-hv-bJu" firstAttribute="trailing" secondItem="bJX-uG-rL0" secondAttribute="trailing" id="UI0-ZG-DO1"/>
+                <constraint firstItem="MP1-hv-bJu" firstAttribute="trailing" secondItem="iM0-sO-Osb" secondAttribute="trailing" id="Xi1-ZZ-ceF"/>
+                <constraint firstItem="iM0-sO-Osb" firstAttribute="leading" secondItem="MP1-hv-bJu" secondAttribute="leading" id="cfw-Tx-uur"/>
+                <constraint firstItem="bJX-uG-rL0" firstAttribute="leading" secondItem="MP1-hv-bJu" secondAttribute="leading" id="oDR-Eh-N1y"/>
+                <constraint firstItem="UYh-fB-agZ" firstAttribute="leading" secondItem="MP1-hv-bJu" secondAttribute="leading" id="q4q-FL-UFj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="MP1-hv-bJu"/>
+        </view>
+    </objects>
+</document>

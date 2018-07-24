@@ -1,0 +1,6 @@
+github "Alamofire/Alamofire" "4.7.3"
+github "Hearst-DD/ObjectMapper" "3.3.0"
+github "Krimpedance/KRProgressHUD" "3.2.2"
+github "krimpedance/KRActivityIndicatorView" "2.1.2"
+github "nixzhu/MonkeyKing" "1.8.0"
+github "tristanhimmelman/AlamofireObjectMapper" "5.1.0"

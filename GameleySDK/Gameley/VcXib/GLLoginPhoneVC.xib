@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14252.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GLLoginPhoneVC" customModule="GameleySDK" customModuleProvider="target">
+            <connections>
+                <outlet property="loginCode" destination="wjM-ia-Ggf" id="GDc-4Y-Cfc"/>
+                <outlet property="loginPhone" destination="I9v-Ws-ZoL" id="Q9d-aQ-ydd"/>
+                <outlet property="verifyCodeBtn" destination="W3m-sd-OOx" id="iVk-ZW-stb"/>
+                <outlet property="view" destination="cbh-gN-8uI" id="s85-9q-cz7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="cbh-gN-8uI">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9v-Ws-ZoL" customClass="PhoneFieldView" customModule="GameleySDK" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="10" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="VRh-xR-WVO"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wjM-ia-Ggf">
+                    <rect key="frame" x="0.0" y="60" width="195" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="cUa-Wy-GOv"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3m-sd-OOx">
+                    <rect key="frame" x="200" y="60" width="100" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="9oD-90-WEO"/>
+                        <constraint firstAttribute="height" constant="40" id="bm3-aA-Kji"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="获取验证码">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="getVerifyCode:" destination="-1" eventType="touchUpInside" id="3mB-r7-R0V"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nV7-uU-Czv">
+                    <rect key="frame" x="0.0" y="110" width="300" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="R0p-OC-1Ql"/>
+                    </constraints>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginByPhoneCode:" destination="-1" eventType="touchUpInside" id="tj4-PA-K65"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="W3m-sd-OOx" firstAttribute="leading" secondItem="wjM-ia-Ggf" secondAttribute="trailing" constant="5" id="6Fb-KW-a8y"/>
+                <constraint firstItem="I9v-Ws-ZoL" firstAttribute="leading" secondItem="oOk-WQ-dl9" secondAttribute="leading" id="8eE-JS-ZPo"/>
+                <constraint firstItem="W3m-sd-OOx" firstAttribute="centerY" secondItem="wjM-ia-Ggf" secondAttribute="centerY" id="CyW-du-jVm"/>
+                <constraint firstItem="W3m-sd-OOx" firstAttribute="leading" secondItem="wjM-ia-Ggf" secondAttribute="trailing" constant="5" id="Iy2-6r-mN3"/>
+                <constraint firstItem="wjM-ia-Ggf" firstAttribute="top" secondItem="I9v-Ws-ZoL" secondAttribute="bottom" constant="10" id="LWY-VO-YFE"/>
+                <constraint firstItem="wjM-ia-Ggf" firstAttribute="leading" secondItem="oOk-WQ-dl9" secondAttribute="leading" id="Sy6-w0-YBV"/>
+                <constraint firstItem="oOk-WQ-dl9" firstAttribute="trailing" secondItem="nV7-uU-Czv" secondAttribute="trailing" id="Zhq-S8-myb"/>
+                <constraint firstItem="oOk-WQ-dl9" firstAttribute="trailing" secondItem="W3m-sd-OOx" secondAttribute="trailing" id="a86-2M-E78"/>
+                <constraint firstItem="oOk-WQ-dl9" firstAttribute="trailing" secondItem="I9v-Ws-ZoL" secondAttribute="trailing" id="aAS-jo-gaG"/>
+                <constraint firstItem="I9v-Ws-ZoL" firstAttribute="top" secondItem="cbh-gN-8uI" secondAttribute="top" constant="10" id="q5p-5i-0wj"/>
+                <constraint firstItem="nV7-uU-Czv" firstAttribute="leading" secondItem="oOk-WQ-dl9" secondAttribute="leading" id="tKZ-Fi-nWO"/>
+                <constraint firstItem="nV7-uU-Czv" firstAttribute="top" secondItem="W3m-sd-OOx" secondAttribute="bottom" constant="10" id="vMy-K4-rOQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="oOk-WQ-dl9"/>
+            <point key="canvasLocation" x="25" y="51"/>
+        </view>
+    </objects>
+</document>
