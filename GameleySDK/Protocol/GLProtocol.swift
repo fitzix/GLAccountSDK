@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc protocol GameleySdkDelegate {
-    @objc optional func didLogin(userInfo: GLUserInfo?)
+@objc public protocol GameleySdkDelegate {
+    @objc optional func didLogin(userInfo: GLUserInfo)
     @objc optional func didLogout()
 }

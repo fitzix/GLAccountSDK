@@ -63,21 +63,28 @@ class GLLoginPhoneVC: UIViewController {
     
     @IBAction func getVerifyCode(_ sender: UIButton) {
         view.endEditing(true)
-        self.isCounting = true
-        if let phoneNum = loginPhone.text, phoneNum.count == 13 {
-            GameleyApiHandler.shared.sendPhoneCode(phone: phoneNum.replacingOccurrences(of: "-", with: "")) { [weak self] resp in
-                if resp.state != 0 {
-                    KRProgressHUD.showError(withMessage: resp.msg)
-                    self?.remainingSeconds = -1
-                }
+        guard let phoneNum = loginPhone.text, phoneNum.count == 13 else {
+            KRProgressHUD.showError(withMessage: "手机号格式错误")
+            return
+        }
+        GameleyApiHandler.shared.sendPhoneCode(phone: phoneNum.replacingOccurrences(of: "-", with: "")) { [weak self] resp in
+            if resp.state != 0 {
+                KRProgressHUD.showError(withMessage: resp.msg)
+                self?.remainingSeconds = -1
             }
+            KRProgressHUD.showSuccess()
+            self?.isCounting = true
         }
     }
     
     @IBAction func loginByPhoneCode(_ sender: UIButton) {
         view.endEditing(true)
+        guard textFieldCheck, let phone = loginPhone.text?.replacingOccurrences(of: "-", with: ""), let code = loginCode.text else {
+            KRProgressHUD.showError(withMessage: "验证码格式有误")
+            return
+        }
         if textFieldCheck {
-            GameleyApiHandler.shared.userLoginPhone(phone: loginPhone.text!.replacingOccurrences(of: "-", with: ""), code: loginCode.text!) { token in
+            GameleyApiHandler.shared.userLoginPhone(phone: phone, code: code) { token in
                 LocalStore.save(key: .userToken, info: token)
                 
                 GameleyApiHandler.shared.getUserInfo{ userInfo in

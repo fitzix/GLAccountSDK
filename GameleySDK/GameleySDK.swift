@@ -12,21 +12,21 @@ import MonkeyKing
 let kScreen_W = UIScreen.main.bounds.width
 let kScreen_H = UIScreen.main.bounds.height
 
-@objcMembers class GameleySDK: NSObject {
+@objcMembers public class GameleySDK: NSObject {
     
     // gameley 后台分配APPID
     public var appId: String?
     // 代理类
     public var delegate: GameleySdkDelegate?
     
-    let GLBundle = Bundle(identifier: "com.github.fitzix.GameleySDK")
+    @nonobjc let GLBundle = Bundle(for: GameleySDK.self)
     
     // 显示配置
     
     // 是否启用悬浮球
     public var useAssistive = true
     
-    var registedType: [GLAccount: Bool] = [.weChat: false, .qq: false, .weibo: false]
+    @nonobjc var registedType: [GLAccount: Bool] = [.weChat: false, .qq: false, .weibo: false]
     
     // 实例
     public static let shared = GameleySDK()
@@ -48,30 +48,36 @@ let kScreen_H = UIScreen.main.bounds.height
     
     
 //  登录按钮  调起登录界面
-    public func login() {
+    public class func login() {
         if !LocalStore.isLogin {
-            getControllerFromStoryboard(clazz: GLLoginModalVC.self).show()
+            shared.getControllerFromStoryboard(clazz: GLLoginModalVC.self).show()
             return
         }
         if let userInfo = LocalStore.getObject(key: .userInfo, object: GLUserInfo()) {
-            didLogin(userInfo: userInfo)
+            shared.didLogin(userInfo: userInfo)
         }
     }
     
 //   根据类获取storyboard controller
-    func getControllerFromStoryboard<T: UIViewController>(clazz: T.Type) -> T {
+    @nonobjc func getControllerFromStoryboard<T: UIViewController>(clazz: T.Type) -> T {
         return UIStoryboard(name: "Gameley", bundle: GameleySDK.shared.GLBundle).instantiateViewController(withIdentifier: clazz.className) as! T
     }
     
-    func logout() {
-        
+    @nonobjc func logout() {
+        LocalStore.logout()
+        delegate?.didLogout?()
     }
     
-    func didLogin(userInfo: GLUserInfo) {
+    @nonobjc func didLogin(userInfo: GLUserInfo) {
         if useAssistive {
             GlFloatButton.shared.showFloatButton()
         }
+        LocalStore.save(key: .userInfo, info: userInfo)
         //TODO
         delegate?.didLogin?(userInfo: userInfo)
+    }
+    
+    @objc public class func handleOpenURL(url: URL) -> Bool {
+        return MonkeyKing.handleOpenURL(url)
     }
 }

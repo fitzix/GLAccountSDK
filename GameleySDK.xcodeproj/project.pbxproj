@@ -21,8 +21,6 @@
 		C43D63B021070E52007596D5 /* KRActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */; };
 		C43D63B221070F11007596D5 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D63B121070F11007596D5 /* LocalStore.swift */; };
 		C46534F120D353A3002E1680 /* GlFloatButtonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46534F020D353A3002E1680 /* GlFloatButtonObj.swift */; };
-		C46534FA20D3940C002E1680 /* GameleySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */; };
-		C46534FB20D3940C002E1680 /* GameleySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C465350020D3A64B002E1680 /* GlResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46534FF20D3A64B002E1680 /* GlResetVC.swift */; };
 		C48B6E2920C6347C00CE5E19 /* GameleySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C48B6E2720C6347C00CE5E19 /* GameleySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C48B6E3620C634B200CE5E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B6E3520C634B200CE5E19 /* AppDelegate.swift */; };
@@ -44,6 +42,18 @@
 		C4BB51CC20D183B300C26F4B /* SpreadSubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB51CB20D183B300C26F4B /* SpreadSubButton.swift */; };
 		C4CCCF8620C6934800F5D944 /* FitzExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCCF8520C6934800F5D944 /* FitzExtensions.swift */; };
 		C4CCCF8820C6996200F5D944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCF8720C6996100F5D944 /* Main.storyboard */; };
+		C4D104322107491D00577680 /* KRActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */; };
+		C4D104332107491D00577680 /* KRActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D104342107491D00577680 /* KRProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AD21070E52007596D5 /* KRProgressHUD.framework */; };
+		C4D104352107491D00577680 /* KRProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AD21070E52007596D5 /* KRProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D104362107491D00577680 /* MonkeyKing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63A02106DD74007596D5 /* MonkeyKing.framework */; };
+		C4D104372107491D00577680 /* MonkeyKing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63A02106DD74007596D5 /* MonkeyKing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D104382107491D00577680 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639C2106D87B007596D5 /* Alamofire.framework */; };
+		C4D104392107491D00577680 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639C2106D87B007596D5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D1043A2107491D00577680 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */; };
+		C4D1043B2107491D00577680 /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C4D1043C2107491D00577680 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639B2106D87B007596D5 /* ObjectMapper.framework */; };
+		C4D1043D2107491D00577680 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639B2106D87B007596D5 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4D6FAE620C9181A00320915 /* PhoneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6FAE520C9181A00320915 /* PhoneFieldView.swift */; };
 		C4E7DFFD20CE5F89006BD360 /* GLRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E7DFFB20CE5F89006BD360 /* GLRegisterVC.swift */; };
 		C4E7DFFE20CE5F89006BD360 /* GLRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E7DFFC20CE5F89006BD360 /* GLRegisterVC.xib */; };
@@ -56,24 +66,19 @@
 		C4EC220620CFF24D006A1D41 /* GameleyApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EC220520CFF24D006A1D41 /* GameleyApiHandler.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C46534FC20D3940C002E1680 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C48B6E1B20C6347C00CE5E19 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C48B6E2320C6347C00CE5E19;
-			remoteInfo = GameleySDK;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		C46534FE20D3940C002E1680 /* Embed Frameworks */ = {
+		C4D1043E2107491E00577680 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C46534FB20D3940C002E1680 /* GameleySDK.framework in Embed Frameworks */,
+				C4D1043D2107491D00577680 /* ObjectMapper.framework in Embed Frameworks */,
+				C4D104372107491D00577680 /* MonkeyKing.framework in Embed Frameworks */,
+				C4D104352107491D00577680 /* KRProgressHUD.framework in Embed Frameworks */,
+				C4D104332107491D00577680 /* KRActivityIndicatorView.framework in Embed Frameworks */,
+				C4D1043B2107491D00577680 /* AlamofireObjectMapper.framework in Embed Frameworks */,
+				C4D104392107491D00577680 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,7 +155,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C46534FA20D3940C002E1680 /* GameleySDK.framework in Frameworks */,
+				C4D1043C2107491D00577680 /* ObjectMapper.framework in Frameworks */,
+				C4D104362107491D00577680 /* MonkeyKing.framework in Frameworks */,
+				C4D104342107491D00577680 /* KRProgressHUD.framework in Frameworks */,
+				C4D104322107491D00577680 /* KRActivityIndicatorView.framework in Frameworks */,
+				C4D1043A2107491D00577680 /* AlamofireObjectMapper.framework in Frameworks */,
+				C4D104382107491D00577680 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,12 +381,11 @@
 				C48B6E2F20C634B200CE5E19 /* Sources */,
 				C48B6E3020C634B200CE5E19 /* Frameworks */,
 				C48B6E3120C634B200CE5E19 /* Resources */,
-				C46534FE20D3940C002E1680 /* Embed Frameworks */,
+				C4D1043E2107491E00577680 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C46534FD20D3940C002E1680 /* PBXTargetDependency */,
 			);
 			name = SDKTest;
 			productName = SDKTest;
@@ -493,14 +502,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C46534FD20D3940C002E1680 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C48B6E2320C6347C00CE5E19 /* GameleySDK */;
-			targetProxy = C46534FC20D3940C002E1680 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C48B6E3E20C634B400CE5E19 /* LaunchScreen.storyboard */ = {
@@ -704,10 +705,13 @@
 		C48B6E4320C634B400CE5E19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T88D69DP6B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SDKTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -723,10 +727,13 @@
 		C48B6E4420C634B400CE5E19 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T88D69DP6B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SDKTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

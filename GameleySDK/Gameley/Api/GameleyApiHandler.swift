@@ -24,6 +24,7 @@ class GameleyApiHandler {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
             }
+            KRProgressHUD.dismiss()
             completion(info)
         }
     }
@@ -34,6 +35,7 @@ class GameleyApiHandler {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
             }
+            KRProgressHUD.dismiss()
             completion(info.token!)
         }
     }
@@ -50,6 +52,7 @@ class GameleyApiHandler {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
             }
+            KRProgressHUD.dismiss()
             completion(info.token!)
         }
     }

@@ -9,14 +9,12 @@
 import UIKit
 import GameleySDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GameleySdkDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        
+        GameleySDK.shared.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,11 +23,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func Show(_ sender: UIButton) {
-        GameleySDK.login() { userInfo in
-            let alert = UIAlertController(title: nil, message: String(describing: userInfo), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "确定", style: .cancel))
-            self.present(alert, animated: true)
-        }
+        GameleySDK.login()
+    }
+    
+    func didLogin(userInfo: GLUserInfo) {
+        print(userInfo.toJSON())
     }
 }
 

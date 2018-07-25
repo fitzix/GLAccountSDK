@@ -24,22 +24,23 @@ class GLBaseResp: Mappable {
     }
 }
 
-@objcMembers class GLUserInfo: NSObject, Mappable {
-     var uid: Int?
-     var account: String?
-     var area: String?
-     var city: String?
-     var dtLastLogin: String?
-     var dtReg: String?
-     var gBirth: String?
-     var gender: String?
-     var icon: String?
-     var nickname: String?
+@objcMembers public class GLUserInfo: NSObject, Mappable {
+    
+     public var uid: Int?
+     public var account: String?
+     public var area: String?
+     public var city: String?
+     public var dtLastLogin: String?
+     public var dtReg: String?
+     public var gBirth: String?
+     public var gender: String?
+     public var icon: String?
+     public var nickname: String?
    
     
-    required init?(map: Map) {}
+    required public init?(map: Map) {}
     
-    @nonobjc func mapping(map: Map) {
+    @nonobjc public func mapping(map: Map) {
         uid <- map["uid"]
         nickname <- map["nickname"]
         icon <- map["icon"]
@@ -52,7 +53,7 @@ class GLBaseResp: Mappable {
         gender <- map["gender"]
         
     }
-    override init() {}
+    public override init() {}
 }
 
 class GLUserInfoResp: GLBaseResp {

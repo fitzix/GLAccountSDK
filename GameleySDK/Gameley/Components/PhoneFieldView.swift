@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhoneFieldView: UITextField {
+class PhoneField: UITextField {
     
     //保存上一次的文本内容
     var _previousText:String!
@@ -20,23 +20,31 @@ class PhoneFieldView: UITextField {
         super.init(frame: frame)
         
         //默认边框样式为圆角矩形
-        self.borderStyle = .roundedRect
+        self.borderStyle = UITextBorderStyle.roundedRect
         //使用数字键盘
         self.keyboardType = UIKeyboardType.numberPad
     }
     
     required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
         super.init(coder: aDecoder)
+        //默认边框样式为圆角矩形
+        self.borderStyle = UITextBorderStyle.roundedRect
+        //使用数字键盘
+        self.keyboardType = UIKeyboardType.numberPad
     }
-
+    
     //当本视图的父类视图改变的时候
     override func willMove(toSuperview newSuperview: UIView?) {
         //监听值改变通知事件
         if newSuperview != nil {
-            NotificationCenter.default.addObserver(self, selector: #selector(phoneNumberFormat(_:)), name: .UITextViewTextDidChange, object: nil)
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(phoneNumberFormat(_:)),
+                                                   name: NSNotification.Name.UITextFieldTextDidChange,
+                                                   object: nil)
         }else{
-            NotificationCenter.default.removeObserver(self, name: .UITextFieldTextDidChange, object: nil)
+            NotificationCenter.default.removeObserver(self,
+                                                      name: Notification.Name.UITextFieldTextDidChange,
+                                                      object: nil)
         }
     }
     
@@ -62,7 +70,7 @@ class PhoneFieldView: UITextField {
                                              to: textField.selectedTextRange!.start)
         
         //过滤掉非数字字符，只保留数字
-        let digitsText = getDigitsText(string: textField.text!,
+        var digitsText = getDigitsText(string: textField.text!,
                                        cursorPosition: &cursorPostion)
         
         //避免超过11位的输入

@@ -13,7 +13,7 @@ private func <<< (lhs:UInt32, rhs:UInt32) -> UInt32 {
     return lhs << rhs | lhs >> (32-rhs)
 }
 
-public struct SHA1 {
+struct SHA1 {
     // One chunk consists of 80 big-endian longwords (32 bits, unsigned)
     private static let CHUNKSIZE=80
     // SHA-1 magic words
@@ -157,28 +157,28 @@ public struct SHA1 {
     }
     
     /// Return the hash of a file as an array of Ints
-    public static func hash(fromFile filename:String) -> [Int]? {
+     static func hash(fromFile filename:String) -> [Int]? {
         return dataFromFile(named: filename)?.h.map{Int($0)}
     }
     
     /// Return a hexadecimal hash from NSData
-    public static func hexString(from data: inout Data) -> String? {
+     static func hexString(from data: inout Data) -> String? {
         return hexString(SHA1.process(data: &data))
     }
     
     /// Return the hash of NSData as an array of Ints
-    public static func hash(from data: inout Data) -> [Int]? {
+     static func hash(from data: inout Data) -> [Int]? {
         return process(data: &data)?.h.map{Int($0)}
     }
     
     /// Return a hexadecimal hash from a string
-    public static func hexString(from str:String) -> String? {
+     static func hexString(from str:String) -> String? {
         guard var data = str.data(using: .utf8) else { return nil }
         return hexString(SHA1.process(data: &data))
     }
     
     /// Return the hash of a string as an array of Ints
-    public static func hash(from str:String) -> [Int]? {
+     static func hash(from str:String) -> [Int]? {
         guard var data = str.data(using: .utf8) else { return nil }
         return process(data: &data)?.h.map{Int($0)}
     }

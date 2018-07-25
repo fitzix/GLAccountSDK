@@ -14,11 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        GameleySDK.registerAccounts(accounts: [.weChat(appID: "wx6e3f21f2c8ad5112", appKey: nil, miniAppID: nil),
-                                               .qq(appID: "101469527"),
-                                               .weibo(appID: "2506559075", appKey: nil, redirectURL: "http://gw.gameley.com")])
+        
+        GameleySDK.registerQQ(appID: "101469527")
+        GameleySDK.registerWeChat(appID: "wx6e3f21f2c8ad5112")
+        GameleySDK.shared.useAssistive = false
+        
+//        GameleySDK.registerAccounts(accounts: [.weChat(appID: "wx6e3f21f2c8ad5112", appKey: nil, miniAppID: nil),
+//                                               .qq(appID: "101469527"),
+//                                               .weibo(appID: "2506559075", appKey: nil, redirectURL: "http://gw.gameley.com")])
         return true
     }
 
@@ -45,8 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return GameleySDK.handleOpenURL(url)
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GameleySDK.handleOpenURL(url: url)
     }
 
 }
