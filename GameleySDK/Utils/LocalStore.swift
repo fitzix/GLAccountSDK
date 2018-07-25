@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import ObjectMapper
 
 class LocalStore {
     enum GLStoreKey: String {

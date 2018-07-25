@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Alamofire
-import KRProgressHUD
 
 class GameleyApiHandler {
     
@@ -19,7 +17,7 @@ class GameleyApiHandler {
             completion(userInfo)
             return
         }
-        GameleyNetwork.shared.request(.userInfo) { (resp: GLUserInfoResp) in
+        GameleyNetwork.shared.glRequest(.userInfo) { (resp: GLUserInfoResp) in
             guard let info = resp.info else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
@@ -30,7 +28,7 @@ class GameleyApiHandler {
     }
     
     func userLoginNormal(account: String, password: String, completion: @escaping (_ result: String) -> Void) {
-        GameleyNetwork.shared.request(.loginNormal, method: .post, parameters: ["name": account, "passwd": password.sha1()!], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(.loginNormal, method: .post, parameters: ["name": account, "passwd": password.sha1()!], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
             guard let info = resp.info else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
@@ -41,13 +39,13 @@ class GameleyApiHandler {
     }
     
     func sendPhoneCode(phone: String, completion: @escaping (_ resp: GLBaseResp) -> Void) {
-        GameleyNetwork.shared.request(.sendPhoneCode, method: .post, parameters: ["phone": phone]) { (resp: GLBaseResp) in
+        GameleyNetwork.shared.glRequest(.sendPhoneCode, method: .post, parameters: ["phone": phone]) { (resp: GLBaseResp) in
             completion(resp)
         }
     }
     
     func userLoginPhone(phone: String, code: String, completion: @escaping (_ result: String) -> Void) {
-        GameleyNetwork.shared.request(.loginPhone, method: .post, parameters: ["phone": phone, "code": code], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(.loginPhone, method: .post, parameters: ["phone": phone, "code": code], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
             guard let info = resp.info else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return

@@ -1,5 +1,5 @@
 //
-//  SHA1.swift
+//  GLSHA1.swift
 //  GameleySDK
 //
 //  Created by fitz on 2018/7/24.
@@ -13,7 +13,7 @@ private func <<< (lhs:UInt32, rhs:UInt32) -> UInt32 {
     return lhs << rhs | lhs >> (32-rhs)
 }
 
-struct SHA1 {
+struct GLSHA1 {
     // One chunk consists of 80 big-endian longwords (32 bits, unsigned)
     private static let CHUNKSIZE=80
     // SHA-1 magic words
@@ -24,13 +24,13 @@ struct SHA1 {
     private static let h4:UInt32 = 0xC3D2E1F0
     
     /**************************************************
-     * SHA1.context                                   *
+     * GLSHA1.context                                   *
      * The context struct contains volatile variables *
      * as well as the actual hashing function.        *
      **************************************************/
     private struct context {
         // Initialise variables:
-        var h:[UInt32]=[SHA1.h0,SHA1.h1,SHA1.h2,SHA1.h3,SHA1.h4]
+        var h:[UInt32]=[GLSHA1.h0,GLSHA1.h1,GLSHA1.h2,GLSHA1.h3,GLSHA1.h4]
         
         // Process one chunk of 80 big-endian longwords
         mutating func process(chunk:inout ContiguousArray<UInt32>) {
@@ -89,8 +89,8 @@ struct SHA1 {
      * 16 longwords (64 bytes, 512 bits),             *
      * padding the chunk as necessary.                *
      **************************************************/
-    private static func process(data: inout Data) -> SHA1.context? {
-        var context=SHA1.context()
+    private static func process(data: inout Data) -> GLSHA1.context? {
+        var context=GLSHA1.context()
         var w = ContiguousArray<UInt32>(repeating: 0x00000000, count: CHUNKSIZE) // Initialise empty chunk
         let ml=data.count << 3                                        // Message length in bits
         var range = Range(0..<64)                                     // A chunk is 64 bytes
@@ -132,7 +132,7 @@ struct SHA1 {
      * hexString()                                    *
      * Render the hash as a hexadecimal string        *
      **************************************************/
-    private static func hexString(_ context:SHA1.context?) -> String? {
+    private static func hexString(_ context:GLSHA1.context?) -> String? {
         guard let c=context else {return nil}
         return String(format: "%08X %08X %08X %08X %08X", c.h[0], c.h[1], c.h[2], c.h[3], c.h[4])
     }
@@ -142,7 +142,7 @@ struct SHA1 {
      * Fetch the contents of a file as NSData         *
      * for processing by processData()                *
      **************************************************/
-    private static func dataFromFile(named filename:String) -> SHA1.context? {
+    private static func dataFromFile(named filename:String) -> GLSHA1.context? {
         guard var file = try? Data(contentsOf: URL(fileURLWithPath: filename)) else {return nil}
         return process(data: &file)
     }
@@ -153,7 +153,7 @@ struct SHA1 {
     
     /// Return a hexadecimal hash from a file
     static public func hexString(fromFile filename:String) -> String? {
-        return hexString(SHA1.dataFromFile(named: filename))
+        return hexString(GLSHA1.dataFromFile(named: filename))
     }
     
     /// Return the hash of a file as an array of Ints
@@ -163,7 +163,7 @@ struct SHA1 {
     
     /// Return a hexadecimal hash from NSData
      static func hexString(from data: inout Data) -> String? {
-        return hexString(SHA1.process(data: &data))
+        return hexString(GLSHA1.process(data: &data))
     }
     
     /// Return the hash of NSData as an array of Ints
@@ -174,7 +174,7 @@ struct SHA1 {
     /// Return a hexadecimal hash from a string
      static func hexString(from str:String) -> String? {
         guard var data = str.data(using: .utf8) else { return nil }
-        return hexString(SHA1.process(data: &data))
+        return hexString(GLSHA1.process(data: &data))
     }
     
     /// Return the hash of a string as an array of Ints

@@ -70,7 +70,7 @@ class PhoneField: UITextField {
                                              to: textField.selectedTextRange!.start)
         
         //过滤掉非数字字符，只保留数字
-        var digitsText = getDigitsText(string: textField.text!,
+        let digitsText = getDigitsText(string: textField.text!,
                                        cursorPosition: &cursorPostion)
         
         //避免超过11位的输入

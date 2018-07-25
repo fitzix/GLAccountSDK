@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import MonkeyKing
-import KRProgressHUD
 
 class GLLoginModalVC: FitzPopUp {
 
@@ -115,7 +113,7 @@ class GLLoginModalVC: FitzPopUp {
     }
     
     func xLogin(type: GameleyNetwork.GLRequestURL, params: [String: Any]) {
-        GameleyNetwork.shared.request(type, parameters: params) { [weak self] (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(type, parameters: params) { [weak self] (resp: GLOauthResp) in
             guard let info = resp.info, let token = info.token else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return

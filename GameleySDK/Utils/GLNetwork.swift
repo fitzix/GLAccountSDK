@@ -4,9 +4,6 @@
 //
 
 import Foundation
-import Alamofire
-import KRProgressHUD
-import AlamofireObjectMapper
 
 class GameleyNetwork {
     
@@ -45,12 +42,12 @@ class GameleyNetwork {
     
     
     
-    public func request<T: GLBaseResp>(_ url: GLRequestURL, service:GLService = .user_basic, method: Alamofire.HTTPMethod = .get, parameters: Parameters? = nil, appendUrl: String? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, addMask: Bool = true, completion: @escaping (T) -> Void){
+    public func glRequest<T: GLBaseResp>(_ url: GLRequestURL, service:GLService = .user_basic, method: HTTPMethod = .get, parameters: Parameters? = nil, appendUrl: String? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, addMask: Bool = true, completion: @escaping (T) -> Void){
         var localHeader = headers
         if headers == nil {
             localHeader = GLHeaders
         }
-        let req = Alamofire.request("\(httpGateway)\(service.rawValue)\(url.rawValue)\(appendUrl ?? "")", method: method, parameters: parameters, encoding: encoding, headers: localHeader)
+        let req = request("\(httpGateway)\(service.rawValue)\(url.rawValue)\(appendUrl ?? "")", method: method, parameters: parameters, encoding: encoding, headers: localHeader)
         if addMask { KRProgressHUD.show() }
         req.responseObject { (response: DataResponse<T>) in
             guard let result = response.result.value, let state = result.state  else {
