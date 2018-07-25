@@ -61,7 +61,7 @@ class GLLoginModalVC: FitzPopUp {
     }
     
     @IBAction func removeView(_ sender: UIButton) {
-        dismiss()
+        dismiss(animated: true, completion: nil)
     }
     
 //    segmented changed

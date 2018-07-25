@@ -26,7 +26,7 @@ class GlFloatButton {
         GlFloatButton.shared.userInfoModal?.dismiss(animated: true, completion: nil)
         GlFloatButton.shared.userBtn.isEnabled = true
         
-        GameleySDK.shared.logout()
+        GameleySDK.shared.didLogout()
     }
     
     func showFloatButton() {

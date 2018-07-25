@@ -52,19 +52,27 @@ let kScreen_H = UIScreen.main.bounds.height
             shared.getControllerFromStoryboard(clazz: GLLoginModalVC.self).show()
             return
         }
-        if let userInfo = LocalStore.getObject(key: .userInfo, object: GLUserInfo()) {
-            shared.didLogin(userInfo: userInfo)
+        
+        GameleyApiHandler.shared.getUserInfo {
+            shared.didLogin(userInfo: $0)
         }
     }
+    
+    public class func logout() {
+        shared.didLogout()
+    }
+    
     
 //   根据类获取storyboard controller
     @nonobjc func getControllerFromStoryboard<T: UIViewController>(clazz: T.Type) -> T {
         return UIStoryboard(name: "Gameley", bundle: GameleySDK.shared.GLBundle).instantiateViewController(withIdentifier: clazz.className) as! T
     }
     
-    @nonobjc func logout() {
+    @nonobjc func didLogout() {
         LocalStore.logout()
         delegate?.didLogout?()
+        //TODO 是否拉起登录页面
+        GameleySDK.login()
     }
     
     @nonobjc func didLogin(userInfo: GLUserInfo) {

@@ -16,7 +16,7 @@ class GameleyNetwork {
     
     var GLHeaders: HTTPHeaders? {
         get {
-            if let token = UserDefaults.standard.string(forKey: "GL_GD_TOKEN") {
+            if let token = LocalStore.get(key: .userToken) {
                 return [ "Authorization": token, "Accept": "application/json" ]
             }
             return nil
@@ -56,9 +56,7 @@ class GameleyNetwork {
             }
             if state == -6 {
                 KRProgressHUD.showError(withMessage: "重新登录")
-                LocalStore.logout()
-                GameleySDK.shared.logout()
-                GameleySDK.shared.delegate?.didLogout?()
+                GameleySDK.shared.didLogout()
                 return
             }
             

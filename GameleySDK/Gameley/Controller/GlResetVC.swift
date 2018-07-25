@@ -17,7 +17,6 @@ class GlResetVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(23333)
         // Do any additional setup after loading the view.
         createDatePicker()
     }

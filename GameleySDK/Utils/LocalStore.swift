@@ -10,8 +10,8 @@ import Foundation
 
 class LocalStore {
     enum GLStoreKey: String {
-        case userToken = "GL_GD_TOKEN"
-        case userInfo = "GL_GD_USER_INFO"
+        case userToken = "GL_SDK_TOKEN"
+        case userInfo = "GL_SDK_USER_INFO"
     }
      static var isLogin: Bool {
         get {

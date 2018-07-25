@@ -13,7 +13,7 @@ class GameleyApiHandler {
     static let shared = GameleyApiHandler()
     
     func getUserInfo(completion: @escaping (_ result: GLUserInfo) -> Void) {
-        if let userInfo = LocalStore.getObject(key: .userInfo, object: GLUserInfo()) {
+        if LocalStore.isLogin, let userInfo = LocalStore.getObject(key: .userInfo, object: GLUserInfo()) {
             completion(userInfo)
             return
         }
@@ -29,10 +29,11 @@ class GameleyApiHandler {
     
     func userLoginNormal(account: String, password: String, completion: @escaping (_ result: String) -> Void) {
         GameleyNetwork.shared.glRequest(.loginNormal, method: .post, parameters: ["name": account, "passwd": password.sha1()!], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
-            guard let info = resp.info else {
-                KRProgressHUD.showError(withMessage: "获取数据失败")
+            guard resp.state == 0, let info = resp.info else {
+                KRProgressHUD.showError(withMessage: resp.msg)
                 return
             }
+
             KRProgressHUD.dismiss()
             completion(info.token!)
         }
@@ -46,10 +47,11 @@ class GameleyApiHandler {
     
     func userLoginPhone(phone: String, code: String, completion: @escaping (_ result: String) -> Void) {
         GameleyNetwork.shared.glRequest(.loginPhone, method: .post, parameters: ["phone": phone, "code": code], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
-            guard let info = resp.info else {
-                KRProgressHUD.showError(withMessage: "获取数据失败")
+            guard resp.state == 0, let info = resp.info else {
+                KRProgressHUD.showError(withMessage: resp.msg)
                 return
             }
+            
             KRProgressHUD.dismiss()
             completion(info.token!)
         }

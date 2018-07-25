@@ -70,6 +70,7 @@ class GLLoginPhoneVC: UIViewController {
             if resp.state != 0 {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 self?.remainingSeconds = -1
+                return
             }
             KRProgressHUD.showSuccess()
             self?.isCounting = true
@@ -83,11 +84,13 @@ class GLLoginPhoneVC: UIViewController {
             return
         }
         if textFieldCheck {
-            GameleyApiHandler.shared.userLoginPhone(phone: phone, code: code) { token in
+            GameleyApiHandler.shared.userLoginPhone(phone: phone, code: code) { [weak self] token in
                 LocalStore.save(key: .userToken, info: token)
                 
                 GameleyApiHandler.shared.getUserInfo{ userInfo in
-                    self.dismiss(animated: false, completion: nil)
+                    
+                    
+                    self?.dismiss(animated: false, completion: nil)
                     GameleySDK.shared.didLogin(userInfo: userInfo)
                 }
             }

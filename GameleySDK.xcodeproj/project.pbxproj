@@ -65,6 +65,14 @@
 		C43A278F21084C240064EAFF /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A275721084C240064EAFF /* DateFormatterTransform.swift */; };
 		C43A279021084C240064EAFF /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A275821084C240064EAFF /* ToJSON.swift */; };
 		C43A279121084C240064EAFF /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A275921084C240064EAFF /* TransformOf.swift */; };
+		C43A27BC2108534C0064EAFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C43A27BB2108534C0064EAFF /* AppDelegate.m */; };
+		C43A27BF2108534C0064EAFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C43A27BE2108534C0064EAFF /* ViewController.m */; };
+		C43A27C22108534C0064EAFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43A27C02108534C0064EAFF /* Main.storyboard */; };
+		C43A27C42108534C0064EAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C43A27C32108534C0064EAFF /* Assets.xcassets */; };
+		C43A27C72108534C0064EAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C43A27C52108534C0064EAFF /* LaunchScreen.storyboard */; };
+		C43A27CA2108534C0064EAFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C43A27C92108534C0064EAFF /* main.m */; };
+		C43A27CF210855590064EAFF /* GameleySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */; };
+		C43A27D0210855590064EAFF /* GameleySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C43D63A32106DDAD007596D5 /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D63A22106DDAD007596D5 /* SHA1.swift */; };
 		C43D63A62106E672007596D5 /* GLEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D63A52106E672007596D5 /* GLEnum.swift */; };
 		C43D63A92106FFB9007596D5 /* GLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D63A82106FFB9007596D5 /* GLProtocol.swift */; };
@@ -92,18 +100,6 @@
 		C4BB51CC20D183B300C26F4B /* SpreadSubButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BB51CB20D183B300C26F4B /* SpreadSubButton.swift */; };
 		C4CCCF8620C6934800F5D944 /* FitzExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CCCF8520C6934800F5D944 /* FitzExtensions.swift */; };
 		C4CCCF8820C6996200F5D944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4CCCF8720C6996100F5D944 /* Main.storyboard */; };
-		C4D104322107491D00577680 /* KRActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */; };
-		C4D104332107491D00577680 /* KRActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4D104342107491D00577680 /* KRProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AD21070E52007596D5 /* KRProgressHUD.framework */; };
-		C4D104352107491D00577680 /* KRProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63AD21070E52007596D5 /* KRProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4D104362107491D00577680 /* MonkeyKing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63A02106DD74007596D5 /* MonkeyKing.framework */; };
-		C4D104372107491D00577680 /* MonkeyKing.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D63A02106DD74007596D5 /* MonkeyKing.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4D104382107491D00577680 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639C2106D87B007596D5 /* Alamofire.framework */; };
-		C4D104392107491D00577680 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639C2106D87B007596D5 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4D1043A2107491D00577680 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */; };
-		C4D1043B2107491D00577680 /* AlamofireObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C4D1043C2107491D00577680 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639B2106D87B007596D5 /* ObjectMapper.framework */; };
-		C4D1043D2107491D00577680 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C43D639B2106D87B007596D5 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C4D6FAE620C9181A00320915 /* PhoneFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6FAE520C9181A00320915 /* PhoneFieldView.swift */; };
 		C4E7DFFD20CE5F89006BD360 /* GLRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E7DFFB20CE5F89006BD360 /* GLRegisterVC.swift */; };
 		C4E7DFFE20CE5F89006BD360 /* GLRegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E7DFFC20CE5F89006BD360 /* GLRegisterVC.xib */; };
@@ -116,19 +112,34 @@
 		C4EC220620CFF24D006A1D41 /* GameleyApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EC220520CFF24D006A1D41 /* GameleyApiHandler.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C43A27D1210855590064EAFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C48B6E1B20C6347C00CE5E19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C48B6E2320C6347C00CE5E19;
+			remoteInfo = GameleySDK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		C43A27D3210855590064EAFF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C43A27D0210855590064EAFF /* GameleySDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4D1043E2107491E00577680 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C4D1043D2107491D00577680 /* ObjectMapper.framework in Embed Frameworks */,
-				C4D104372107491D00577680 /* MonkeyKing.framework in Embed Frameworks */,
-				C4D104352107491D00577680 /* KRProgressHUD.framework in Embed Frameworks */,
-				C4D104332107491D00577680 /* KRActivityIndicatorView.framework in Embed Frameworks */,
-				C4D1043B2107491D00577680 /* AlamofireObjectMapper.framework in Embed Frameworks */,
-				C4D104392107491D00577680 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,16 +205,20 @@
 		C43A275721084C240064EAFF /* DateFormatterTransform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterTransform.swift; sourceTree = "<group>"; };
 		C43A275821084C240064EAFF /* ToJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToJSON.swift; sourceTree = "<group>"; };
 		C43A275921084C240064EAFF /* TransformOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformOf.swift; sourceTree = "<group>"; };
-		C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
-		C43D639B2106D87B007596D5 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
-		C43D639C2106D87B007596D5 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		C43D63A02106DD74007596D5 /* MonkeyKing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MonkeyKing.framework; path = Carthage/Build/iOS/MonkeyKing.framework; sourceTree = "<group>"; };
+		C43A27B82108534B0064EAFF /* OCTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C43A27BA2108534B0064EAFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C43A27BB2108534C0064EAFF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C43A27BD2108534C0064EAFF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C43A27BE2108534C0064EAFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C43A27C12108534C0064EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C43A27C32108534C0064EAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C43A27C62108534C0064EAFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C43A27C82108534C0064EAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C43A27C92108534C0064EAFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C43D63A22106DDAD007596D5 /* SHA1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
 		C43D63A52106E672007596D5 /* GLEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLEnum.swift; sourceTree = "<group>"; };
 		C43D63A82106FFB9007596D5 /* GLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLProtocol.swift; sourceTree = "<group>"; };
 		C43D63AB21070927007596D5 /* GLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLModel.swift; sourceTree = "<group>"; };
-		C43D63AD21070E52007596D5 /* KRProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KRProgressHUD.framework; path = Carthage/Build/iOS/KRProgressHUD.framework; sourceTree = "<group>"; };
-		C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KRActivityIndicatorView.framework; path = Carthage/Build/iOS/KRActivityIndicatorView.framework; sourceTree = "<group>"; };
 		C43D63B121070F11007596D5 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		C46534F020D353A3002E1680 /* GlFloatButtonObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlFloatButtonObj.swift; sourceTree = "<group>"; };
 		C46534FF20D3A64B002E1680 /* GlResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlResetVC.swift; sourceTree = "<group>"; };
@@ -244,6 +259,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C43A27B52108534B0064EAFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43A27CF210855590064EAFF /* GameleySDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C48B6E2020C6347C00CE5E19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,12 +278,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4D1043C2107491D00577680 /* ObjectMapper.framework in Frameworks */,
-				C4D104362107491D00577680 /* MonkeyKing.framework in Frameworks */,
-				C4D104342107491D00577680 /* KRProgressHUD.framework in Frameworks */,
-				C4D104322107491D00577680 /* KRActivityIndicatorView.framework in Frameworks */,
-				C4D1043A2107491D00577680 /* AlamofireObjectMapper.framework in Frameworks */,
-				C4D104382107491D00577680 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +395,22 @@
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
+		C43A27B92108534B0064EAFF /* OCTest */ = {
+			isa = PBXGroup;
+			children = (
+				C43A27BA2108534B0064EAFF /* AppDelegate.h */,
+				C43A27BB2108534C0064EAFF /* AppDelegate.m */,
+				C43A27BD2108534C0064EAFF /* ViewController.h */,
+				C43A27BE2108534C0064EAFF /* ViewController.m */,
+				C43A27C02108534C0064EAFF /* Main.storyboard */,
+				C43A27C32108534C0064EAFF /* Assets.xcassets */,
+				C43A27C52108534C0064EAFF /* LaunchScreen.storyboard */,
+				C43A27C82108534C0064EAFF /* Info.plist */,
+				C43A27C92108534C0064EAFF /* main.m */,
+			);
+			path = OCTest;
+			sourceTree = "<group>";
+		};
 		C43D63A42106E64F007596D5 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,12 +438,6 @@
 		C46534F220D36B90002E1680 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C43D63AE21070E52007596D5 /* KRActivityIndicatorView.framework */,
-				C43D63AD21070E52007596D5 /* KRProgressHUD.framework */,
-				C43D63A02106DD74007596D5 /* MonkeyKing.framework */,
-				C43D639C2106D87B007596D5 /* Alamofire.framework */,
-				C43D639A2106D87B007596D5 /* AlamofireObjectMapper.framework */,
-				C43D639B2106D87B007596D5 /* ObjectMapper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -420,6 +447,7 @@
 			children = (
 				C48B6E2620C6347C00CE5E19 /* GameleySDK */,
 				C48B6E3420C634B200CE5E19 /* SDKTest */,
+				C43A27B92108534B0064EAFF /* OCTest */,
 				C48B6E2520C6347C00CE5E19 /* Products */,
 				C46534F220D36B90002E1680 /* Frameworks */,
 			);
@@ -430,6 +458,7 @@
 			children = (
 				C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */,
 				C48B6E3320C634B200CE5E19 /* SDKTest.app */,
+				C43A27B82108534B0064EAFF /* OCTest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -568,6 +597,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C43A27B72108534B0064EAFF /* OCTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43A27CD2108534C0064EAFF /* Build configuration list for PBXNativeTarget "OCTest" */;
+			buildPhases = (
+				C43A27B42108534B0064EAFF /* Sources */,
+				C43A27B52108534B0064EAFF /* Frameworks */,
+				C43A27B62108534B0064EAFF /* Resources */,
+				C43A27D3210855590064EAFF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C43A27D2210855590064EAFF /* PBXTargetDependency */,
+			);
+			name = OCTest;
+			productName = OCTest;
+			productReference = C43A27B82108534B0064EAFF /* OCTest.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C48B6E2320C6347C00CE5E19 /* GameleySDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C48B6E2C20C6347C00CE5E19 /* Build configuration list for PBXNativeTarget "GameleySDK" */;
@@ -614,6 +662,9 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Fitz Leo";
 				TargetAttributes = {
+					C43A27B72108534B0064EAFF = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
 					C48B6E2320C6347C00CE5E19 = {
 						CreatedOnToolsVersion = 9.4;
 						LastSwiftMigration = 1000;
@@ -639,11 +690,22 @@
 			targets = (
 				C48B6E2320C6347C00CE5E19 /* GameleySDK */,
 				C48B6E3220C634B200CE5E19 /* SDKTest */,
+				C43A27B72108534B0064EAFF /* OCTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C43A27B62108534B0064EAFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43A27C72108534C0064EAFF /* LaunchScreen.storyboard in Resources */,
+				C43A27C42108534C0064EAFF /* Assets.xcassets in Resources */,
+				C43A27C22108534C0064EAFF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C48B6E2220C6347C00CE5E19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -669,6 +731,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C43A27B42108534B0064EAFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C43A27BF2108534C0064EAFF /* ViewController.m in Sources */,
+				C43A27CA2108534C0064EAFF /* main.m in Sources */,
+				C43A27BC2108534C0064EAFF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C48B6E1F20C6347C00CE5E19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -771,7 +843,31 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C43A27D2210855590064EAFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C48B6E2320C6347C00CE5E19 /* GameleySDK */;
+			targetProxy = C43A27D1210855590064EAFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		C43A27C02108534C0064EAFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C43A27C12108534C0064EAFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C43A27C52108534C0064EAFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C43A27C62108534C0064EAFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		C48B6E3E20C634B400CE5E19 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -783,6 +879,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C43A27CB2108534C0064EAFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T88D69DP6B;
+				INFOPLIST_FILE = OCTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.fitzix.OCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C43A27CC2108534C0064EAFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T88D69DP6B;
+				INFOPLIST_FILE = OCTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.fitzix.OCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C48B6E2A20C6347C00CE5E19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1011,6 +1143,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C43A27CD2108534C0064EAFF /* Build configuration list for PBXNativeTarget "OCTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C43A27CB2108534C0064EAFF /* Debug */,
+				C43A27CC2108534C0064EAFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C48B6E1E20C6347C00CE5E19 /* Build configuration list for PBXProject "GameleySDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
