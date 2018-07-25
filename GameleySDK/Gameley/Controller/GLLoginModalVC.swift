@@ -87,6 +87,7 @@ class GLLoginModalVC: FitzPopUp {
                 KRProgressHUD.showError(withMessage: "登录失败")
                 return
             }
+           
             self?.xLogin(type: .oauthQQ, params: ["accessToken": token, "openId": openID])
         }
     }
@@ -118,6 +119,8 @@ class GLLoginModalVC: FitzPopUp {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
             }
+            KRProgressHUD.dismiss()
+            
             LocalStore.save(key: .userToken, info: token)
             
             GameleyApiHandler.shared.getUserInfo{ userInfo in

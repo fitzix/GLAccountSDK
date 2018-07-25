@@ -32,9 +32,10 @@
 }
 
 - (void)didLoginWithUserInfo:(GLUserInfo *)userInfo {
-    NSLog(@"%@", userInfo);
+    NSLog(@"dssddsd");
 }
 - (IBAction)logout:(UIButton *)sender {
+    [GameleySDK logout];
     NSLog(@"退出了");
 }
 

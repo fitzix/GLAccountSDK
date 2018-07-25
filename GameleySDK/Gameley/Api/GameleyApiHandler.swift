@@ -18,6 +18,7 @@ class GameleyApiHandler {
             return
         }
         GameleyNetwork.shared.glRequest(.userInfo) { (resp: GLUserInfoResp) in
+            print(resp.toJSON())
             guard let info = resp.info else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return

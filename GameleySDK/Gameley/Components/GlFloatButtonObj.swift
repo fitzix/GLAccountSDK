@@ -11,26 +11,21 @@ import Foundation
 class GlFloatButton {
     static let shared = GlFloatButton()
     
-    lazy var userInfoModal: GlUserSettingNavVC?  = GameleySDK.shared.getControllerFromStoryboard(clazz: GlUserSettingNavVC.self)
+    lazy var userInfoModal = GameleySDK.shared.getControllerFromStoryboard(clazz: GlUserSettingNavVC.self)
     
     lazy var spreadButton = SpreadButton(image: UIImage(named: "icon_gameley", in: GameleySDK.shared.GLBundle, compatibleWith: nil),highlightImage: nil, position: CGPoint(x: 40, y: UIScreen.main.bounds.height - 40))
     
-    lazy var userBtn: SpreadSubButton = SpreadSubButton(backgroundImage: UIImage(named: "icon_user", in: GameleySDK.shared.GLBundle, compatibleWith: nil), highlightImage: nil) { (index, sender) -> Void in
+    lazy var userBtn: SpreadSubButton = SpreadSubButton(backgroundImage: UIImage(named: "icon_user", in: GameleySDK.shared.GLBundle, compatibleWith: nil), highlightImage: nil) { [weak self] (index, sender) -> Void in
         sender.isEnabled = false
-        GLUtil.getKeyWinddow().rootViewController?.present(GlFloatButton.shared.userInfoModal!, animated: true, completion: nil)
+        GLUtil.getKeyWinddow().rootViewController?.present((self?.userInfoModal)!, animated: true, completion: nil)
     }
     
-    lazy var logoutBtn = SpreadSubButton(backgroundImage: UIImage(named: "icon_logout", in: GameleySDK.shared.GLBundle, compatibleWith: nil), highlightImage: nil) { (index, sender) -> Void in
-        
-        GlFloatButton.shared.spreadButton?.removeFromSuperview()
-        GlFloatButton.shared.userInfoModal?.dismiss(animated: true, completion: nil)
-        GlFloatButton.shared.userBtn.isEnabled = true
-        
+    lazy var logoutBtn = SpreadSubButton(backgroundImage: UIImage(named: "icon_logout", in: GameleySDK.shared.GLBundle, compatibleWith: nil), highlightImage: nil) {  (index, sender) -> Void in
         GameleySDK.shared.didLogout()
     }
     
     func showFloatButton() {
-        guard let _ = UserDefaults.standard.string(forKey: "GAMELEY_USER_TOKEN"), let spreadButton = spreadButton else {
+        guard let spreadButton = spreadButton else {
             return
         }
         spreadButton.setSubButtons([userBtn, logoutBtn])
@@ -38,7 +33,20 @@ class GlFloatButton {
         spreadButton.direction = SpreadDirection.spreadDirectionRightUp
         spreadButton.radius = 50
         spreadButton.positionMode = SpreadPositionMode.spreadPositionModeTouchBorder
-        
         GLUtil.getKeyWinddow().addSubview(spreadButton)
+    }
+    
+    func logout() {
+        if GameleySDK.shared.useAssistive {
+            spreadButton?.removeFromSuperview()
+            userInfoModal.dismiss(animated: true, completion: nil)
+            userBtn.isEnabled = true
+        }
+    }
+    
+    func login() {
+        if GameleySDK.shared.useAssistive {
+            showFloatButton()
+        }
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2FF684F2751B1353EEDEA9BD /* GLNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF683E00EC7ED45C7027798 /* GLNetwork.swift */; };
-		C438E94C20CA7A24001DBA21 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C438E94B20CA7A24001DBA21 /* LoadingView.swift */; };
 		C43A275A21084C240064EAFF /* KRProgressHUDIconType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A271D21084C240064EAFF /* KRProgressHUDIconType.swift */; };
 		C43A275B21084C240064EAFF /* InnerKRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A271E21084C240064EAFF /* InnerKRProgressHUD.swift */; };
 		C43A275C21084C240064EAFF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43A271F21084C240064EAFF /* Extensions.swift */; };
@@ -148,7 +147,6 @@
 
 /* Begin PBXFileReference section */
 		2FF683E00EC7ED45C7027798 /* GLNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLNetwork.swift; sourceTree = "<group>"; };
-		C438E94B20CA7A24001DBA21 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		C43A271D21084C240064EAFF /* KRProgressHUDIconType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KRProgressHUDIconType.swift; sourceTree = "<group>"; };
 		C43A271E21084C240064EAFF /* InnerKRProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerKRProgressHUD.swift; sourceTree = "<group>"; };
 		C43A271F21084C240064EAFF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -554,7 +552,6 @@
 			children = (
 				C46534F020D353A3002E1680 /* GlFloatButtonObj.swift */,
 				C4D6FAE520C9181A00320915 /* PhoneFieldView.swift */,
-				C438E94B20CA7A24001DBA21 /* LoadingView.swift */,
 				C4A0AF3920D8D68B00209411 /* GLSinglePickerView.swift */,
 				C4B60E2F20D9FCF100BDC745 /* GLBirthPickerView.swift */,
 				C4B60E3420DA474700BDC745 /* GLInputPickerView.swift */,
@@ -798,7 +795,6 @@
 				C48B6E6E20C63F6C00CE5E19 /* GameleySDK.swift in Sources */,
 				C43A277F21084C240064EAFF /* URLTransform.swift in Sources */,
 				2FF684F2751B1353EEDEA9BD /* GLNetwork.swift in Sources */,
-				C438E94C20CA7A24001DBA21 /* LoadingView.swift in Sources */,
 				C43A277E21084C240064EAFF /* ISO8601DateTransform.swift in Sources */,
 				C43A275C21084C240064EAFF /* Extensions.swift in Sources */,
 				C43A275A21084C240064EAFF /* KRProgressHUDIconType.swift in Sources */,

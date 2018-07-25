@@ -145,7 +145,7 @@ class SpreadButton: UIView, CAAnimationDelegate {
             fatalError("ERROR, image can not be nil")
         }
         
-        let mainFrame = CGRect(x: position.x, y: position.y, width: nonNilImage.size.width, height: nonNilImage.size.height)
+        let mainFrame = CGRect(x: position.x, y: position.y, width: 50, height: 50)
         super.init(frame: mainFrame)
         
         //save the mainFrame

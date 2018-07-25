@@ -70,16 +70,18 @@ let kScreen_H = UIScreen.main.bounds.height
     
     @nonobjc func didLogout() {
         LocalStore.logout()
+        // 悬浮球
+        GlFloatButton.shared.logout()
+        //代理回调
         delegate?.didLogout?()
         //TODO 是否拉起登录页面
         GameleySDK.login()
     }
     
     @nonobjc func didLogin(userInfo: GLUserInfo) {
-        if useAssistive {
-            GlFloatButton.shared.showFloatButton()
-        }
         LocalStore.save(key: .userInfo, info: userInfo)
+        // 悬浮球
+        GlFloatButton.shared.login()
         //TODO
         delegate?.didLogin?(userInfo: userInfo)
     }
