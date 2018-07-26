@@ -15,4 +15,12 @@ class GLUtil {
         }
         return keyWindow
     }
+    
+    class func getGenderCode(str: String) -> Int {
+        switch str {
+        case "男": return 0
+        case "女": return 1
+        default: return 2
+        }
+    }
 }

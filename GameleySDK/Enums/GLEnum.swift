@@ -8,6 +8,18 @@
 
 import Foundation
 
-@objc enum GLAccount: Int {
+enum GLAccount: Int {
     case weChat, qq, weibo
+}
+
+enum GLGender: Int {
+    case male, female, unkonw
+    
+    var title: String {
+        switch self {
+        case .male: return "男"
+        case .female: return "女"
+        case .unkonw: return "未知"
+        }
+    }
 }

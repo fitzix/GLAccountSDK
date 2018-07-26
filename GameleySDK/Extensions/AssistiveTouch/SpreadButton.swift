@@ -45,28 +45,28 @@ class SpreadButton: UIView, CAAnimationDelegate {
     //        return {print("Button Will Spread")}
     //    }()
     var buttonWillSpreadBlock: ButtonWillSpreadBlock = { _ in
-        print("Button Will Spread")
+        
     }
     
     //    lazy var buttonDidSpreadBlock: ButtonDidSpreadBlock = {
     //        return { print("Button Did Spread") }
     //    }()
     var buttonDidSpreadBlock: ButtonDidSpreadBlock = { _ in
-        print("Button Did Spread")
+        
     }
     
     //    lazy var buttonWillCloseBlock: ButtonWillCloseBlock = {
     //        return { print("Button Will Close") }
     //    }()
     var buttonWillCloseBlock: ButtonWillCloseBlock = { _ in
-        print("Button Will Close")
+        
     }
     
     //    lazy var buttonDidCloseBlock: ButtonDidCloseBlock = {
     //        return { print("Button Did Closed") }
     //    }()
     var buttonDidCloseBlock: ButtonDidCloseBlock = { _ in
-        print("Button Did Closed")
+        
     }
     
     fileprivate static let sickleSpreadAngleDefault: CGFloat = 90.0

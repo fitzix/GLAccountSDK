@@ -79,6 +79,7 @@
 		C43D63B221070F11007596D5 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43D63B121070F11007596D5 /* LocalStore.swift */; };
 		C46534F120D353A3002E1680 /* GlFloatButtonObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46534F020D353A3002E1680 /* GlFloatButtonObj.swift */; };
 		C465350020D3A64B002E1680 /* GlResetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46534FF20D3A64B002E1680 /* GlResetVC.swift */; };
+		C48943D92109D09B00AC2F42 /* GLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48943D82109D09B00AC2F42 /* GLConfig.swift */; };
 		C48B6E2920C6347C00CE5E19 /* GameleySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C48B6E2720C6347C00CE5E19 /* GameleySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C48B6E3620C634B200CE5E19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B6E3520C634B200CE5E19 /* AppDelegate.swift */; };
 		C48B6E3820C634B200CE5E19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B6E3720C634B200CE5E19 /* ViewController.swift */; };
@@ -88,8 +89,6 @@
 		C48B6E6C20C63EAB00CE5E19 /* FitzPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B6E6B20C63EAB00CE5E19 /* FitzPopUp.swift */; };
 		C48B6E6E20C63F6C00CE5E19 /* GameleySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48B6E6D20C63F6C00CE5E19 /* GameleySDK.swift */; };
 		C48E97AD20D240B600180E6D /* GLUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E97AC20D240B600180E6D /* GLUtil.swift */; };
-		C48E97B120D26B3100180E6D /* GlUserSettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E97B020D26B3100180E6D /* GlUserSettingVC.swift */; };
-		C48E97B320D2916900180E6D /* GlUserSettingNavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E97B220D2916900180E6D /* GlUserSettingNavVC.swift */; };
 		C4A0AF3820D8B7B800209411 /* GlUserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0AF3720D8B7B800209411 /* GlUserInfoVC.swift */; };
 		C4A0AF3A20D8D68B00209411 /* GLSinglePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A0AF3920D8D68B00209411 /* GLSinglePickerView.swift */; };
 		C4B60E3020D9FCF100BDC745 /* GLBirthPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B60E2F20D9FCF100BDC745 /* GLBirthPickerView.swift */; };
@@ -220,6 +219,7 @@
 		C43D63B121070F11007596D5 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		C46534F020D353A3002E1680 /* GlFloatButtonObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlFloatButtonObj.swift; sourceTree = "<group>"; };
 		C46534FF20D3A64B002E1680 /* GlResetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlResetVC.swift; sourceTree = "<group>"; };
+		C48943D82109D09B00AC2F42 /* GLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLConfig.swift; sourceTree = "<group>"; };
 		C48B6E2420C6347C00CE5E19 /* GameleySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GameleySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48B6E2720C6347C00CE5E19 /* GameleySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameleySDK.h; sourceTree = "<group>"; };
 		C48B6E2820C6347C00CE5E19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -233,8 +233,6 @@
 		C48B6E6B20C63EAB00CE5E19 /* FitzPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitzPopUp.swift; sourceTree = "<group>"; };
 		C48B6E6D20C63F6C00CE5E19 /* GameleySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameleySDK.swift; sourceTree = "<group>"; };
 		C48E97AC20D240B600180E6D /* GLUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLUtil.swift; sourceTree = "<group>"; };
-		C48E97B020D26B3100180E6D /* GlUserSettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlUserSettingVC.swift; sourceTree = "<group>"; };
-		C48E97B220D2916900180E6D /* GlUserSettingNavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlUserSettingNavVC.swift; sourceTree = "<group>"; };
 		C4A0AF3720D8B7B800209411 /* GlUserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlUserInfoVC.swift; sourceTree = "<group>"; };
 		C4A0AF3920D8D68B00209411 /* GLSinglePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLSinglePickerView.swift; sourceTree = "<group>"; };
 		C4B60E2F20D9FCF100BDC745 /* GLBirthPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLBirthPickerView.swift; sourceTree = "<group>"; };
@@ -440,6 +438,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C48943D72109D08800AC2F42 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				C48943D82109D09B00AC2F42 /* GLConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		C48B6E1A20C6347C00CE5E19 = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +470,7 @@
 		C48B6E2620C6347C00CE5E19 /* GameleySDK */ = {
 			isa = PBXGroup;
 			children = (
+				C48943D72109D08800AC2F42 /* Config */,
 				C43A271B21084C240064EAFF /* Libs */,
 				C43D63AA21070917007596D5 /* Models */,
 				C43D63A72106FF78007596D5 /* Protocol */,
@@ -539,8 +546,6 @@
 			children = (
 				C4B60E3220DA434700BDC745 /* GLInputPickerViewController.swift */,
 				C4EC220020CFCC9F006A1D41 /* GLLoginModalVC.swift */,
-				C48E97B020D26B3100180E6D /* GlUserSettingVC.swift */,
-				C48E97B220D2916900180E6D /* GlUserSettingNavVC.swift */,
 				C46534FF20D3A64B002E1680 /* GlResetVC.swift */,
 				C4A0AF3720D8B7B800209411 /* GlUserInfoVC.swift */,
 			);
@@ -755,7 +760,6 @@
 				C48B6E6C20C63EAB00CE5E19 /* FitzPopUp.swift in Sources */,
 				C43A278B21084C240064EAFF /* IntegerOperators.swift in Sources */,
 				C43A276A21084C240064EAFF /* Alamofire.swift in Sources */,
-				C48E97B320D2916900180E6D /* GlUserSettingNavVC.swift in Sources */,
 				C43A275E21084C240064EAFF /* KRProgressHUD.swift in Sources */,
 				C4CCCF8620C6934800F5D944 /* FitzExtensions.swift in Sources */,
 				C43A278821084C240064EAFF /* DictionaryTransform.swift in Sources */,
@@ -763,7 +767,6 @@
 				C43A278C21084C240064EAFF /* TransformType.swift in Sources */,
 				C43A277921084C240064EAFF /* KRActivityIndicatorViewStyle.swift in Sources */,
 				C43A278021084C240064EAFF /* NSDecimalNumberTransform.swift in Sources */,
-				C48E97B120D26B3100180E6D /* GlUserSettingVC.swift in Sources */,
 				C43A276E21084C240064EAFF /* ServerTrustPolicy.swift in Sources */,
 				C43A276021084C240064EAFF /* MultipartFormData.swift in Sources */,
 				C43A276121084C240064EAFF /* NetworkReachabilityManager.swift in Sources */,
@@ -772,6 +775,7 @@
 				C4E7DFFD20CE5F89006BD360 /* GLRegisterVC.swift in Sources */,
 				C43A277A21084C240064EAFF /* KRActivityIndicatorPath.swift in Sources */,
 				C46534F120D353A3002E1680 /* GlFloatButtonObj.swift in Sources */,
+				C48943D92109D09B00AC2F42 /* GLConfig.swift in Sources */,
 				C43A278E21084C240064EAFF /* DateTransform.swift in Sources */,
 				C43A278721084C240064EAFF /* FromJSON.swift in Sources */,
 				C43A277621084C240064EAFF /* MonkeyKingExtensions.swift in Sources */,

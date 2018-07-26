@@ -113,7 +113,7 @@ class GLLoginModalVC: FitzPopUp {
         }
     }
     
-    func xLogin(type: GameleyNetwork.GLRequestURL, params: [String: Any]) {
+    func xLogin(type: GLConfig.GLRequestURL, params: [String: Any]) {
         GameleyNetwork.shared.glRequest(type, parameters: params) { [weak self] (resp: GLOauthResp) in
             guard let info = resp.info, let token = info.token else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")

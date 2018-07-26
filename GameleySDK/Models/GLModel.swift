@@ -32,7 +32,7 @@ class GLBaseResp: Mappable {
      public var dtLastLogin: String?
      public var dtReg: String?
      public var gBirth: String?
-     public var gender: String?
+     public var gender: Int?
      public var icon: String?
      public var nickname: String?
    
@@ -81,6 +81,66 @@ class GLOauthInfo: Mappable {
 
 class GLOauthResp: GLBaseResp {
     var info: GLOauthInfo?
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        
+        info <- map["info"]
+    }
+}
+
+
+// bind
+class GLBnindInfo: Mappable {
+    
+    var phone: String?
+    var wx: String?
+    var qq: String?
+    var wb: String?
+    var email: String?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        phone <- map["phone"]
+        wx <- map["wx"]
+        qq <- map["qq"]
+        wb <- map["wb"]
+        email <- map["email"]
+    }
+}
+
+class GLBindsResp: GLBaseResp {
+    var info: GLBnindInfo?
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        
+        info <- map["info"]
+    }
+}
+
+// upload
+class GLUploadInfo: Mappable {
+    var url: String!
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        url <- map["url"]
+    }
+}
+
+class GLUploadResp: GLBaseResp {
+    var info: GLUploadInfo?
+    
     required init?(map: Map) {
         super.init(map: map)
     }

@@ -11,7 +11,7 @@ import Foundation
 class GlFloatButton {
     static let shared = GlFloatButton()
     
-    lazy var userInfoModal = GameleySDK.shared.getControllerFromStoryboard(clazz: GlUserSettingNavVC.self)
+    lazy var userInfoModal = GameleySDK.shared.getControllerFromStoryboard(clazz: UINavigationController.self)
     
     lazy var spreadButton = SpreadButton(image: UIImage(named: "icon_gameley", in: GameleySDK.shared.GLBundle, compatibleWith: nil),highlightImage: nil, position: CGPoint(x: 40, y: UIScreen.main.bounds.height - 40))
     
