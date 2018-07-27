@@ -19,9 +19,14 @@ class GameleyNetwork {
 //    instance
     static let shared = GameleyNetwork()
     
-    func glRequest<T: GLBaseResp>(_ url: GLConfig.GLRequestURL, parameters: Parameters? = nil, appendUrl: String? = nil, encoding: ParameterEncoding = URLEncoding.default, headers: HTTPHeaders? = nil, addMask: Bool = true, completion: @escaping (T) -> Void){
-    
-        let req = request("\(GLConfig.GLHttpGateway)\(url.service)\(url.rawValue)\(appendUrl ?? "")", method: url.method, parameters: parameters, encoding: encoding, headers: GLHeaders)
+    func glRequest<T: GLBaseResp>(_ url: GLConfig.GLRequestURL, appendURL: String = "", parameters: Parameters? = nil, encoding: ParameterEncoding? = nil, headers: HTTPHeaders? = nil, addMask: Bool = true, completion: @escaping (T) -> Void){
+        var encode = encoding
+        if encoding == nil {
+            encode = url.encoding
+        }
+        
+        let req = request("\(GLConfig.GLHttpGateway)\(url.service)\(url.rawValue)\(appendURL)", method: url.method, parameters: parameters, encoding: encode!, headers: GLHeaders)
+        debugPrint(req)
         if addMask { KRProgressHUD.show() }
         req.responseObject { (response: DataResponse<T>) in
             guard let result = response.result.value, let state = result.state  else {
@@ -48,7 +53,8 @@ class GameleyNetwork {
                     multipartFormData.append(($0.value.data(using: .utf8))!, withName: $0.key)
                 })
                 images?.forEach({
-                    if let imageData = UIImagePNGRepresentation($0.value) {
+                    
+                    if let imageData = UIImageJPEGRepresentation($0.value, 0.5) {
                         multipartFormData.append(imageData, withName: $0.key, fileName: "file-\($0.key).png", mimeType: "image/png")
                     }
                 })
@@ -60,6 +66,7 @@ class GameleyNetwork {
                 switch encodingResult {
                 case .success(let upload, _, _):
                     upload.responseObject { (response: DataResponse<T>) in
+                        debugPrint(response)
                         guard let result = response.result.value, let state = result.state  else {
                             KRProgressHUD.showError(withMessage: "请求失败")
                             return

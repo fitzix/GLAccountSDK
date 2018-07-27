@@ -9,11 +9,19 @@
 import Foundation
 
 enum GLAccount: Int {
-    case weChat, qq, weibo
+    case weChat = 1, qq, weibo
+    
+    var key: String {
+        switch self {
+        case .qq: return "qq"
+        case .weChat: return "wx"
+        case .weibo: return "wb"
+        }
+    }
 }
 
 enum GLGender: Int {
-    case male, female, unkonw
+    case unkonw, male, female
     
     var title: String {
         switch self {

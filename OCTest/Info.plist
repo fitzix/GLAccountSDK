@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>zh_CN</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -82,8 +82,8 @@
 		<string>weibosdk</string>
 	</array>
 	<key>NSCameraUsageDescription</key>
-	<string>访问相机</string>
+	<string>使用相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>访问相册</string>
+	<string>使用相册</string>
 </dict>
 </plist>

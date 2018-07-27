@@ -14,12 +14,26 @@ class GLBaseResp: Mappable {
     var msg: String?
     var ok: Bool?
     
+    // 网关返回
+    var error: String?
+    var exception: String?
+    var message: String?
+    var status: Int?
+    var timestamp: Int?
+    
+    
     required init?(map: Map) {}
     
     func mapping(map: Map) {
         state <- map["state"]
         msg <- map["msg"]
         ok <- map["ok"]
+        
+        error <- map["error"]
+        exception <- map["exception"]
+        message <- map["message"]
+        status <- map["status"]
+        timestamp <- map["timestamp"]
     }
 }
 
@@ -140,6 +154,31 @@ class GLUploadInfo: Mappable {
 
 class GLUploadResp: GLBaseResp {
     var info: GLUploadInfo?
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        
+        info <- map["info"]
+    }
+}
+
+// 换绑手机 验证原手机
+class GLUpdateVerifyPhoneInfo: Mappable {
+    var hideCode: String!
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        hideCode <- map["hideCode"]
+    }
+}
+
+class GLUpdateVerifyPhoneResp: GLBaseResp {
+    var info: GLUpdateVerifyPhoneInfo?
     
     required init?(map: Map) {
         super.init(map: map)

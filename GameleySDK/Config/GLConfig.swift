@@ -11,6 +11,7 @@ import Foundation
 class GLConfig {
     
     static let GLHttpGateway = "https://test.gw.leuok.com"
+    static let GLChannelID = 4001
     
     enum GLService: String {
         case user_basic = "/gl-ms-user-basic"
@@ -22,32 +23,49 @@ class GLConfig {
         case loginPhone = "/login/phone"
         
         case sendPhoneCode = "/login/send_phone_message"
+        case sendPhoneCodeUpdate = "/update/send_phone_message"
         
         case userInfo = "/query/user"
         case binds = "/query/bingd"
         case updateData = "/update/data"
+        case changeBindVerify = "/update/verification_phone"
+        case updatePhone = "/update/phone"
         
         case oauthWx = "/oauth/android/wx"
         case oauthQQ = "/oauth/android/qq"
         case oauthWb = "/oauth/android/wb"
+        case oauthUnbind = "/update/unbind"
+        
+        case oauthBind = "/oauth/android/bind"
+        case oauthBindWx = "/oauth/android/bindWx"
         
         case fileUpload = "/file/upload"
         
         var method: HTTPMethod {
             switch self {
-            case .userInfo, .binds, .oauthQQ, .oauthWb, .oauthWx:
+            case .userInfo, .binds, .oauthQQ, .oauthWb, .oauthWx, .oauthBind, .oauthBindWx:
                 return .get
-            case .loginNormal, .loginPhone, .sendPhoneCode, .updateData, .fileUpload:
+            case .loginNormal, .loginPhone, .sendPhoneCode, .updateData, .fileUpload, .changeBindVerify, .updatePhone, .sendPhoneCodeUpdate:
                 return .post
+            case .oauthUnbind:
+                return .patch
             }
         }
         
         var service: String {
             switch self {
-            case .loginNormal, .loginPhone, .sendPhoneCode, .userInfo, .binds, .updateData, .oauthWx, .oauthQQ, .oauthWb:
-                return GLService.user_basic.rawValue
             case .fileUpload:
                 return GLService.file_service.rawValue
+            default:
+                return GLService.user_basic.rawValue
+            }
+        }
+        
+        var encoding: ParameterEncoding {
+            switch self.method {
+            case .get: return URLEncoding.default
+            case .post: return JSONEncoding.default
+            default: return URLEncoding.default
             }
         }
     }

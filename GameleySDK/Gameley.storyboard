@@ -264,7 +264,7 @@
                         <sections>
                             <tableViewSection id="5Ld-Im-0IO">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="Jby-XS-q2p">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="Jby-XS-q2p">
                                         <rect key="frame" x="0.0" y="35" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jby-XS-q2p" id="IHp-ZS-5kd">
@@ -299,7 +299,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1ew-IW-N9q" detailTextLabel="AzV-63-DEm" style="IBUITableViewCellStyleValue1" id="gia-1C-0Os">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="1ew-IW-N9q" detailTextLabel="AzV-63-DEm" style="IBUITableViewCellStyleValue1" id="gia-1C-0Os">
                                         <rect key="frame" x="0.0" y="105" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gia-1C-0Os" id="WRl-Ln-I6K">
@@ -327,7 +327,7 @@
                                             <segue destination="EeX-Kd-xZV" kind="show" trigger="accessoryAction" id="Xnw-H7-ZNs"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="x4h-Mf-TtJ" detailTextLabel="JI8-a4-uh7" style="IBUITableViewCellStyleValue1" id="UWw-S0-bMe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="x4h-Mf-TtJ" detailTextLabel="JI8-a4-uh7" style="IBUITableViewCellStyleValue1" id="UWw-S0-bMe">
                                         <rect key="frame" x="0.0" y="149" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UWw-S0-bMe" id="ms6-lD-uNF">
@@ -352,7 +352,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ivb-Zg-xIZ" detailTextLabel="ykV-VE-N3T" style="IBUITableViewCellStyleValue1" id="29v-ys-35k">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ivb-Zg-xIZ" detailTextLabel="ykV-VE-N3T" style="IBUITableViewCellStyleValue1" id="29v-ys-35k">
                                         <rect key="frame" x="0.0" y="193" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="29v-ys-35k" id="is9-hK-KIu">
@@ -506,7 +506,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection id="v5C-wB-wla" userLabel="账号绑定">
+                            <tableViewSection id="v5C-wB-wla" userLabel="密码相关">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="HWy-4T-geZ" detailTextLabel="7Lc-74-0fH" style="IBUITableViewCellStyleValue1" id="Q06-oW-TkA">
                                         <rect key="frame" x="0.0" y="529" width="375" height="44"/>
@@ -566,7 +566,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="个人中心" id="D1v-TV-b5f">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icon-return-small" id="FiW-qT-tYp">
-                            <inset key="imageInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <connections>
                                 <action selector="removeView:" destination="brQ-6e-5fx" id="3CE-Ov-MWs"/>
                             </connections>
@@ -623,45 +623,117 @@
             </objects>
             <point key="canvasLocation" x="5041" y="-1032"/>
         </scene>
-        <!--View Controller-->
+        <!--Bind Phone View Controller-->
         <scene sceneID="f37-Hj-bJG">
             <objects>
-                <viewController id="vm8-OU-68i" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GLBindPhoneViewController" id="vm8-OU-68i" customClass="GLBindPhoneViewController" customModule="GameleySDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a4F-yB-UzD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1P-d9-czP">
-                                <rect key="frame" x="16" y="129" width="255" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z1P-d9-czP">
+                                <rect key="frame" x="16" y="211" width="250" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="l51-SO-Yct"/>
+                                    <constraint firstAttribute="width" constant="250" id="w35-2r-r1E"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPS-K2-3nz">
+                                <rect key="frame" x="272" y="214" width="92" height="34"/>
+                                <state key="normal" title="获取验证码">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendVerifyCode:" destination="vm8-OU-68i" eventType="touchUpInside" id="lfj-3i-VBU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="42h-Wj-8W4" customClass="PhoneField" customModule="GameleySDK" customModuleProvider="target">
+                                <rect key="frame" x="16" y="163" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yoA-pf-wUV"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pPS-K2-3nz">
-                                <rect key="frame" x="279" y="127" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="获取验证码"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atw-Gn-i2V">
-                                <rect key="frame" x="16" y="167" width="340" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H55-1m-JpN">
+                                <rect key="frame" x="0.0" y="103" width="375" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vP-aZ-aHU">
+                                        <rect key="frame" x="15" y="3" width="0.0" height="54"/>
+                                        <color key="textColor" red="0.58039215690000001" green="0.57647058819999997" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awE-8d-93r">
+                                        <rect key="frame" x="27.333333333333329" y="21" width="150" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="Pnd-M3-Bfa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="1" green="0.63529411764705879" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="awE-8d-93r" firstAttribute="leading" secondItem="7vP-aZ-aHU" secondAttribute="trailing" constant="12" id="4ka-wj-D9p"/>
+                                    <constraint firstAttribute="bottom" secondItem="awE-8d-93r" secondAttribute="bottom" constant="21" id="KcD-mA-AI3"/>
+                                    <constraint firstItem="awE-8d-93r" firstAttribute="top" secondItem="H55-1m-JpN" secondAttribute="top" constant="21" id="L6j-jb-WUp"/>
+                                    <constraint firstItem="7vP-aZ-aHU" firstAttribute="leading" secondItem="H55-1m-JpN" secondAttribute="leading" constant="15" id="ceW-Uq-8Pu"/>
+                                    <constraint firstAttribute="height" constant="60" id="e78-c1-PPO"/>
+                                    <constraint firstItem="7vP-aZ-aHU" firstAttribute="top" secondItem="H55-1m-JpN" secondAttribute="top" constant="3" id="rgQ-5a-ZXZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="7vP-aZ-aHU" secondAttribute="bottom" constant="3" id="xmH-ez-dFx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atw-Gn-i2V">
+                                <rect key="frame" x="12" y="259" width="351" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="47X-7J-5Bg"/>
+                                </constraints>
                                 <state key="normal" title="下一步">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="nextStep:" destination="vm8-OU-68i" eventType="touchUpInside" id="gV8-rF-dpq"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="为了保护账号安全,请先验证当前手机" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="93a-bK-iGA">
-                                <rect key="frame" x="16" y="103" width="249.33333333333337" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pPS-K2-3nz" firstAttribute="leading" secondItem="Z1P-d9-czP" secondAttribute="trailing" constant="6" id="0lc-vJ-L5W"/>
+                            <constraint firstItem="pPS-K2-3nz" firstAttribute="centerY" secondItem="Z1P-d9-czP" secondAttribute="centerY" id="32H-kq-cfS"/>
+                            <constraint firstItem="H55-1m-JpN" firstAttribute="leading" secondItem="zHX-Zv-kTe" secondAttribute="leading" id="5Y6-Tj-6KH"/>
+                            <constraint firstItem="atw-Gn-i2V" firstAttribute="top" secondItem="Z1P-d9-czP" secondAttribute="bottom" constant="8" id="ABw-IF-4Sv"/>
+                            <constraint firstItem="42h-Wj-8W4" firstAttribute="top" secondItem="H55-1m-JpN" secondAttribute="bottom" id="C3r-KL-jqG"/>
+                            <constraint firstItem="Z1P-d9-czP" firstAttribute="top" secondItem="42h-Wj-8W4" secondAttribute="bottom" constant="8" id="P8y-lO-vTN"/>
+                            <constraint firstItem="Z1P-d9-czP" firstAttribute="leading" secondItem="zHX-Zv-kTe" secondAttribute="leading" constant="16" id="Rjt-6a-hDe"/>
+                            <constraint firstItem="42h-Wj-8W4" firstAttribute="leading" secondItem="zHX-Zv-kTe" secondAttribute="leading" constant="16" id="S5C-e5-pma"/>
+                            <constraint firstItem="zHX-Zv-kTe" firstAttribute="trailing" secondItem="atw-Gn-i2V" secondAttribute="trailing" constant="12" id="Slu-qd-bPS"/>
+                            <constraint firstItem="zHX-Zv-kTe" firstAttribute="trailing" secondItem="42h-Wj-8W4" secondAttribute="trailing" constant="16" id="Y98-Sa-a4c"/>
+                            <constraint firstItem="atw-Gn-i2V" firstAttribute="leading" secondItem="zHX-Zv-kTe" secondAttribute="leading" constant="12" id="fHK-3g-b6q"/>
+                            <constraint firstItem="H55-1m-JpN" firstAttribute="top" secondItem="zHX-Zv-kTe" secondAttribute="top" constant="15" id="qOk-9G-RbT"/>
+                            <constraint firstItem="H55-1m-JpN" firstAttribute="trailing" secondItem="zHX-Zv-kTe" secondAttribute="trailing" id="qh7-RZ-BTO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zHX-Zv-kTe"/>
                     </view>
+                    <connections>
+                        <outlet property="nextBtn" destination="atw-Gn-i2V" id="xII-HB-aGg"/>
+                        <outlet property="phoneField" destination="42h-Wj-8W4" id="d1a-6R-SY4"/>
+                        <outlet property="phoneLabel" destination="awE-8d-93r" id="ctT-AP-GWB"/>
+                        <outlet property="verifyCodeBtn" destination="pPS-K2-3nz" id="XIL-Ek-wR4"/>
+                        <outlet property="verifyCodeTextField" destination="Z1P-d9-czP" id="KDH-gR-8ak"/>
+                        <outlet property="warningLabel" destination="7vP-aZ-aHU" id="R0W-U5-o1I"/>
+                        <outlet property="warningView" destination="H55-1m-JpN" id="fXN-rb-HsN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNq-4X-WdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

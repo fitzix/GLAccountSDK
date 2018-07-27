@@ -29,7 +29,7 @@ class GameleyApiHandler {
     }
     
     func userLoginNormal(account: String, password: String, completion: @escaping (_ result: String) -> Void) {
-        GameleyNetwork.shared.glRequest(.loginNormal, parameters: ["name": account, "passwd": password.sha1()!], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(.loginNormal, parameters: ["name": account, "passwd": password.sha1()!]) { (resp: GLOauthResp) in
             guard resp.state == 0, let info = resp.info else {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 return
@@ -40,14 +40,20 @@ class GameleyApiHandler {
         }
     }
     
-    func sendPhoneCode(phone: String, completion: @escaping (_ resp: GLBaseResp) -> Void) {
-        GameleyNetwork.shared.glRequest(.sendPhoneCode, parameters: ["phone": phone]) { (resp: GLBaseResp) in
+    func sendPhoneCode(params: Parameters, completion: @escaping (_ resp: GLBaseResp) -> Void) {
+        GameleyNetwork.shared.glRequest(.sendPhoneCode, parameters: params, encoding: URLEncoding(destination: .queryString)) { (resp: GLBaseResp) in
+            completion(resp)
+        }
+    }
+    
+    func sendPhoneCodeUpdate(params: Parameters, completion: @escaping (_ resp: GLBaseResp) -> Void) {
+        GameleyNetwork.shared.glRequest(.sendPhoneCodeUpdate, parameters: params, encoding: URLEncoding(destination: .queryString)) { (resp: GLBaseResp) in
             completion(resp)
         }
     }
     
     func userLoginPhone(phone: String, code: String, completion: @escaping (_ result: String) -> Void) {
-        GameleyNetwork.shared.glRequest(.loginPhone, parameters: ["phone": phone, "code": code], encoding: JSONEncoding.default) { (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(.loginPhone, parameters: ["phone": phone, "code": code]) { (resp: GLOauthResp) in
             guard resp.state == 0, let info = resp.info else {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 return
@@ -70,7 +76,7 @@ class GameleyApiHandler {
     }
     
     func updateData(parameters: Parameters? = nil, completion: @escaping () -> Void) {
-        GameleyNetwork.shared.glRequest(.updateData, parameters: parameters, encoding: JSONEncoding.default, addMask: false) { (resp: GLBaseResp) in
+        GameleyNetwork.shared.glRequest(.updateData, parameters: parameters, addMask: false) { (resp: GLBaseResp) in
             guard resp.state == 0 else {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 return

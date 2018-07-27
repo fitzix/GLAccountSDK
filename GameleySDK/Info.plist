@@ -20,5 +20,9 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>使用相机</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>使用相册</string>
 </dict>
 </plist>

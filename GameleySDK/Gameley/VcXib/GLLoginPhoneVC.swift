@@ -66,7 +66,7 @@ class GLLoginPhoneVC: UIViewController {
             KRProgressHUD.showError(withMessage: "手机号格式错误")
             return
         }
-        GameleyApiHandler.shared.sendPhoneCode(phone: phoneNum.replacingOccurrences(of: "-", with: "")) { [weak self] resp in
+        GameleyApiHandler.shared.sendPhoneCode(params: ["phone": phoneNum.replacingOccurrences(of: "-", with: "")]) { [weak self] resp in
             if resp.state != 0 {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 self?.remainingSeconds = -1
