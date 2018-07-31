@@ -190,3 +190,32 @@ class GLUpdateVerifyPhoneResp: GLBaseResp {
         info <- map["info"]
     }
 }
+
+// 快速注册
+class GLQuickRegisterInfo: Mappable {
+    var account: String?
+    var passwd: String?
+    var token: String?
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {
+        account <- map["account"]
+        passwd <- map["passwd"]
+        token <- map["token"]
+    }
+}
+
+class GLQuickRegisterResp: GLBaseResp {
+    var info: GLQuickRegisterInfo?
+    
+    required init?(map: Map) {
+        super.init(map: map)
+    }
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        
+        info <- map["info"]
+    }
+}

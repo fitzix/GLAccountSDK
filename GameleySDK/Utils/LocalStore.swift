@@ -12,6 +12,7 @@ class LocalStore {
     enum GLStoreKey: String {
         case userToken = "GL_SDK_TOKEN"
         case userInfo = "GL_SDK_USER_INFO"
+        case quickInfo = "GL_SDK_QUICK_INFO"
     }
      static var isLogin: Bool {
         get {

@@ -12,18 +12,19 @@ class GameleyApiHandler {
     
     static let shared = GameleyApiHandler()
     
-    func getUserInfo(completion: @escaping (_ result: GLUserInfo) -> Void) {
+    func getUserInfo(addMask: Bool = true, completion: @escaping (_ result: GLUserInfo) -> Void) {
         if LocalStore.isLogin, let userInfo = LocalStore.getObject(key: .userInfo, object: GLUserInfo()) {
             completion(userInfo)
             return
         }
-        GameleyNetwork.shared.glRequest(.userInfo) { (resp: GLUserInfoResp) in
-            print(resp.toJSON())
+        GameleyNetwork.shared.glRequest(.userInfo, addMask: addMask) { (resp: GLUserInfoResp) in
             guard let info = resp.info else {
                 KRProgressHUD.showError(withMessage: "获取数据失败")
                 return
             }
-            KRProgressHUD.dismiss()
+            if addMask {
+              KRProgressHUD.dismiss()
+            }
             completion(info)
         }
     }
