@@ -30,7 +30,7 @@ class GameleyApiHandler {
     }
     
     func userLoginNormal(account: String, password: String, completion: @escaping (_ result: String) -> Void) {
-        GameleyNetwork.shared.glRequest(.loginNormal, parameters: ["name": account, "passwd": password.sha1()!]) { (resp: GLOauthResp) in
+        GameleyNetwork.shared.glRequest(.loginNormal, parameters: ["name": account, "passwd": password.sha1()!.replacingOccurrences(of: " ", with: "").lowercased()]) { (resp: GLOauthResp) in
             guard resp.state == 0, let info = resp.info else {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 return

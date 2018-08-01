@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GLLoginModalVC: FitzPopUp {
+class GLLoginModalVC: FitzPopUp, UITextFieldDelegate {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
@@ -22,6 +22,8 @@ class GLLoginModalVC: FitzPopUp {
     @IBOutlet weak var quickAccountLabel: UILabel!
     @IBOutlet weak var quickPasswdLabel: UILabel!
     
+    var isRegister = true
+    
     // 注册view
     @IBOutlet weak var registerPhoneView: UIView!
     @IBOutlet weak var registerPhoneField: UITextField!
@@ -30,6 +32,9 @@ class GLLoginModalVC: FitzPopUp {
     @IBOutlet weak var registerPasswdField: UITextField!
     @IBOutlet weak var registerRepasswdField: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
+    
+    // 重置密码 复用注册view
+    @IBOutlet weak var registerResetViewTitle: UILabel!
     
     
     var currentTextField: UITextField?
@@ -52,14 +57,23 @@ class GLLoginModalVC: FitzPopUp {
         }
     }
     
-    var registerPasswdFieldCheck: Bool {
+    var registerPasswdFieldCheck: (Bool, String) {
         get {
             let passwdPattern = "^(?=.*[0-9].*)(?=.*[A-Z].*)(?=.*[a-z].*).{6,16}$"
             
-            guard let passwd = registerPasswdField.text, let repasswd = registerRepasswdField.text, GLUtil.GLRegex(passwdPattern).match(input: passwd), passwd == repasswd else {
-                return false
+            guard let passwd = registerPasswdField.text, let repasswd = registerRepasswdField.text else {
+                return (false, "密码不能为空")
             }
-            return true
+            
+            guard GLUtil.GLRegex(passwdPattern).match(input: passwd) else {
+                return (false, "密码必须为6-16位,同时包含大小写字母和数字")
+            }
+            
+            guard passwd == repasswd else {
+                return (false, "两次密码不一致")
+            }
+            
+            return (true, "")
         }
     }
 
@@ -142,12 +156,12 @@ class GLLoginModalVC: FitzPopUp {
         registerPasswdField.setBottomBorder()
         registerRepasswdField.setBottomBorder()
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(kbFrameChanged(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
-//
-//        registerPhoneField.delegate = self
-//        registerCodeField.delegate = self
-//        registerRepasswdField.delegate = self
-//        registerRepasswdField.delegate = self
+        NotificationCenter.default.addObserver(self, selector: #selector(kbFrameChanged(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
+
+        registerPhoneField.delegate = self
+        registerCodeField.delegate = self
+        registerRepasswdField.delegate = self
+        registerRepasswdField.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -259,7 +273,30 @@ class GLLoginModalVC: FitzPopUp {
     
     
     @IBAction func registerPhoneAction(_ sender: UIButton) {
+        isRegister = true
+        setRegisterView()
         contentView.bringSubview(toFront: registerPhoneView)
+    }
+    
+    @IBAction func resetPasswdAction(_ sender: UIButton) {
+        isRegister = false
+        setRegisterView()
+        contentView.bringSubview(toFront: registerPhoneView)
+    }
+    
+    func setRegisterView() {
+        if isRegister {
+            registerResetViewTitle.text = "手机注册"
+            registerBtn.setTitle("注册", for: .normal)
+        } else {
+            registerResetViewTitle.text = "忘记密码"
+            registerBtn.setTitle("提交", for: .normal)
+        }
+        
+        registerPhoneField.text = ""
+        registerCodeField.text = ""
+        registerPasswdField.text = ""
+        registerRepasswdField.text = ""
     }
     
     
@@ -276,28 +313,36 @@ class GLLoginModalVC: FitzPopUp {
     }
     
     // 弹出键盘
-//    @objc func kbFrameChanged(_ notification : Notification) {
-//        guard let curText = currentTextField else {
-//            return
-//        }
-//
-//        let info = notification.userInfo
-//        let kbRect = (info?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-//        print(contentView.frame.origin.y)
-//
-//        var offsetY = kbRect.origin.y - UIScreen.main.bounds.height
-//        if offsetY != 0 {
-//            offsetY = 0 - (contentView.frame.origin.y + curText.frame.origin.y)
-//        }
-//
-//        UIView.animate(withDuration: 0.3) {
-//            self.contentView.transform = CGAffineTransform(translationX: 0, y: offsetY)
-//        }
-//    }
-//
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        currentTextField = textField
-//    }
+    @objc func kbFrameChanged(_ notification : Notification) {
+        
+
+        let info = notification.userInfo
+        let kbRect = (info?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+
+        var offsetY = kbRect.origin.y - UIScreen.main.bounds.height
+        
+        guard let curText = currentTextField else {
+            if offsetY != 0 {
+                offsetY = -60
+            }
+            UIView.animate(withDuration: 0.3) {
+                self.contentView.transform = CGAffineTransform(translationX: 0, y: offsetY)
+            }
+            return
+        }
+        
+        if offsetY != 0 {
+            offsetY = 0 - curText.frame.origin.y
+        }
+
+        UIView.animate(withDuration: 0.3) {
+            self.contentView.transform = CGAffineTransform(translationX: 0, y: offsetY)
+        }
+    }
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        currentTextField = textField
+    }
     
     //------------------------------手机注册--------------------------------
     @objc func updateTime(timer: Timer) {
@@ -315,8 +360,15 @@ class GLLoginModalVC: FitzPopUp {
             KRProgressHUD.showError(withMessage: "手机号格式错误")
             return
         }
+        var url = GLConfig.GLRequestURL.sendRegisterPhoneCode
+        var params = ["phone": registerPhoneField.text!.replacingOccurrences(of: "-", with: "")]
         
-        GameleyNetwork.shared.glRequest(.sendRegisterPhoneCode, parameters: ["phone": registerPhoneField.text!.replacingOccurrences(of: "-", with: "")], encoding: URLEncoding(destination: .queryString)) { [weak self] (resp: GLBaseResp) in
+        if !isRegister {
+            url = GLConfig.GLRequestURL.passwdResetSendCode
+            params = ["account": registerPhoneField.text!.replacingOccurrences(of: "-", with: "")]
+        }
+        
+        GameleyNetwork.shared.glRequest(url, parameters: params, encoding: URLEncoding(destination: .queryString)) { [weak self] (resp: GLBaseResp) in
             guard resp.state == 0 else {
                 KRProgressHUD.showError(withMessage: resp.msg)
                 return
@@ -327,22 +379,52 @@ class GLLoginModalVC: FitzPopUp {
     }
     
     @IBAction func registerPhone(_ sender: UIButton) {
-        guard registerPhoneFieldCheck, registerCodeFieldCheck, registerPasswdFieldCheck else{
-            KRProgressHUD.showError(withMessage: "格式错误")
+        guard registerPhoneFieldCheck, registerCodeFieldCheck else{
+            KRProgressHUD.showError(withMessage: "后几号或验证码格式错误")
             return
         }
-        GameleyNetwork.shared.glRequest(.phoneRegister, parameters: ["phone": registerPhoneField.text!.replacingOccurrences(of: "-", with: ""), "passwd": registerPasswdField.text!, "repasswd": registerRepasswdField.text!]) { [weak self] (resp: GLOauthResp) in
-            guard resp.state == 0, let info = resp.info, let token = info.token else {
-                KRProgressHUD.showError(withMessage: resp.msg)
-                return
+        
+        guard registerPasswdFieldCheck.0 else {
+            KRProgressHUD.showError(withMessage: registerPasswdFieldCheck.1)
+            return
+        }
+        
+        let passwd = registerPasswdField.text!.sha1()!.replacingOccurrences(of: " ", with: "").lowercased()
+        let phoneNum = registerPhoneField.text!.replacingOccurrences(of: "-", with: "")
+        let code = registerCodeField.text!
+        
+        if isRegister {
+            GameleyNetwork.shared.glRequest(.phoneRegister, parameters: ["phone": phoneNum, "passwd": passwd, "repasswd": passwd]) { [weak self] (resp: GLOauthResp) in
+                guard resp.state == 0, let info = resp.info, let token = info.token else {
+                    KRProgressHUD.showError(withMessage: resp.msg)
+                    return
+                }
+                KRProgressHUD.dismiss()
+                
+                LocalStore.save(key: .userToken, info: token)
+                
+                GameleyApiHandler.shared.getUserInfo { [weak self] userInfo in
+                    self?.dismiss(animated: false, completion: nil)
+                    GameleySDK.shared.didLogin(userInfo: userInfo)
+                }
             }
-            KRProgressHUD.dismiss()
-            
-            LocalStore.save(key: .userToken, info: token)
-            
-            GameleyApiHandler.shared.getUserInfo { [weak self] userInfo in
-                self?.dismiss(animated: false, completion: nil)
-                GameleySDK.shared.didLogin(userInfo: userInfo)
+        } else {
+            GameleyNetwork.shared.glRequest(.passwdResetCheck,parameters: ["phone": phoneNum, "code": code]) { (resp: GLBaseResp) in
+                guard resp.state == 0 else {
+                    KRProgressHUD.showError(withMessage: resp.msg)
+                    return
+                }
+                KRProgressHUD.dismiss()
+                
+                GameleyNetwork.shared.glRequest(.passwdReset, parameters: ["phone": phoneNum, "code": code, "passwd": passwd, "repasswd": passwd]) { [weak self] (resp: GLBaseResp) in
+                    guard resp.state == 0, let `self` = self else {
+                        KRProgressHUD.showError(withMessage: resp.msg)
+                        return
+                    }
+                    KRProgressHUD.showSuccess(withMessage: "修改成功")
+                    self.contentView.bringSubview(toFront: self.loginView)
+                    self.currentTextField = nil
+                }
             }
         }
     }

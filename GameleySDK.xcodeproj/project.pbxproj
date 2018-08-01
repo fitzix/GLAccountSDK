@@ -106,6 +106,7 @@
 		C4E7E00220CE6329006BD360 /* GLLoginPhoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E7E00020CE6329006BD360 /* GLLoginPhoneVC.xib */; };
 		C4E7E00520CE650D006BD360 /* GLLoginAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E7E00320CE650D006BD360 /* GLLoginAccountVC.swift */; };
 		C4E7E00620CE650D006BD360 /* GLLoginAccountVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4E7E00420CE650D006BD360 /* GLLoginAccountVC.xib */; };
+		C4EAF05E2111993800536EF8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4EAF05D2111993700536EF8 /* Default-568h@2x.png */; };
 		C4EC220120CFCC9F006A1D41 /* GLLoginModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EC220020CFCC9F006A1D41 /* GLLoginModalVC.swift */; };
 		C4EC220320CFE2C4006A1D41 /* Gameley.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4EC220220CFE2C3006A1D41 /* Gameley.xcassets */; };
 		C4EC220620CFF24D006A1D41 /* GameleyApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EC220520CFF24D006A1D41 /* GameleyApiHandler.swift */; };
@@ -251,6 +252,7 @@
 		C4E7E00020CE6329006BD360 /* GLLoginPhoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLLoginPhoneVC.xib; sourceTree = "<group>"; };
 		C4E7E00320CE650D006BD360 /* GLLoginAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLLoginAccountVC.swift; sourceTree = "<group>"; };
 		C4E7E00420CE650D006BD360 /* GLLoginAccountVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GLLoginAccountVC.xib; sourceTree = "<group>"; };
+		C4EAF05D2111993700536EF8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4EC220020CFCC9F006A1D41 /* GLLoginModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLLoginModalVC.swift; sourceTree = "<group>"; };
 		C4EC220220CFE2C3006A1D41 /* Gameley.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Gameley.xcassets; sourceTree = "<group>"; };
 		C4EC220520CFF24D006A1D41 /* GameleyApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameleyApiHandler.swift; sourceTree = "<group>"; };
@@ -451,8 +453,9 @@
 		C48B6E1A20C6347C00CE5E19 = {
 			isa = PBXGroup;
 			children = (
+				C4EAF05D2111993700536EF8 /* Default-568h@2x.png */,
 				C48B6E2620C6347C00CE5E19 /* GameleySDK */,
-				C48B6E3420C634B200CE5E19 /* SDKTest */,
+				C48B6E3420C634B200CE5E19 /* SwiftTest */,
 				C43A27B92108534B0064EAFF /* OCTest */,
 				C48B6E2520C6347C00CE5E19 /* Products */,
 				C46534F220D36B90002E1680 /* Frameworks */,
@@ -489,7 +492,7 @@
 			path = GameleySDK;
 			sourceTree = "<group>";
 		};
-		C48B6E3420C634B200CE5E19 /* SDKTest */ = {
+		C48B6E3420C634B200CE5E19 /* SwiftTest */ = {
 			isa = PBXGroup;
 			children = (
 				C4CCCF8720C6996100F5D944 /* Main.storyboard */,
@@ -499,7 +502,7 @@
 				C48B6E3E20C634B400CE5E19 /* LaunchScreen.storyboard */,
 				C48B6E4120C634B400CE5E19 /* Info.plist */,
 			);
-			path = SDKTest;
+			path = SwiftTest;
 			sourceTree = "<group>";
 		};
 		C48B6E6A20C63E8900CE5E19 /* Utils */ = {
@@ -728,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CCCF8820C6996200F5D944 /* Main.storyboard in Resources */,
+				C4EAF05E2111993800536EF8 /* Default-568h@2x.png in Resources */,
 				C48B6E4020C634B400CE5E19 /* LaunchScreen.storyboard in Resources */,
 				C48B6E3D20C634B400CE5E19 /* Assets.xcassets in Resources */,
 			);

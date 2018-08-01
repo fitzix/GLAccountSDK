@@ -24,6 +24,10 @@ class GLConfig {
         case mailRegister = "/register/mail"
         case sendRegisterPhoneCode = "/register/send_phone_message"
         
+        case passwdResetSendCode = "/passwd/reset/send_code_message"
+        case passwdResetCheck = "/passwd/reset/check_code"
+        case passwdReset = "/passwd/reset/index"
+        
         case loginNormal = "/login/normal"
         case loginPhone = "/login/phone"
         
@@ -50,7 +54,7 @@ class GLConfig {
             switch self {
             case .userInfo, .binds, .oauthQQ, .oauthWb, .oauthWx, .oauthBind, .oauthBindWx:
                 return .get
-            case .loginNormal, .loginPhone, .sendPhoneCode, .updateData, .fileUpload, .changeBindVerify, .updatePhone, .sendPhoneCodeUpdate, .quickRegister, .phoneRegister, .mailRegister, .sendRegisterPhoneCode:
+            case .loginNormal, .loginPhone, .sendPhoneCode, .updateData, .fileUpload, .changeBindVerify, .updatePhone, .sendPhoneCodeUpdate, .quickRegister, .phoneRegister, .mailRegister, .sendRegisterPhoneCode, .passwdResetSendCode, .passwdReset, .passwdResetCheck:
                 return .post
             case .oauthUnbind:
                 return .patch

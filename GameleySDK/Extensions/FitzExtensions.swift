@@ -123,7 +123,7 @@ extension String
     }
     
     func sha1() -> String? {
-        return GLSHA1.hexString(from: "abc")
+        return GLSHA1.hexString(from: self)
     }
 }
 

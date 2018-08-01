@@ -62,7 +62,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8r-r6-aUX">
                                                 <rect key="frame" x="220" y="108.66666666666669" width="100" height="40"/>
@@ -82,7 +82,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y4M-ld-rxj">
                                                 <rect key="frame" x="20" y="224.33333333333331" width="300" height="40"/>
@@ -91,7 +91,7 @@
                                                 </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jor-Qr-nbt">
                                                 <rect key="frame" x="20" y="282" width="300" height="40"/>
@@ -104,7 +104,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -193,7 +193,7 @@
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
+                                                        <real key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
@@ -290,6 +290,9 @@
                                                 <rect key="frame" x="262" y="222" width="58" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="忘记密码"/>
+                                                <connections>
+                                                    <action selector="resetPasswdAction:" destination="lM2-pG-QIN" eventType="touchUpInside" id="Mmi-0U-3ay"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="其他登录方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kal-Oi-tQu">
                                                 <rect key="frame" x="113" y="251" width="114" height="20"/>
@@ -478,6 +481,7 @@
                         <outlet property="registerPhoneField" destination="sqj-gN-zn5" id="1TR-XJ-fK4"/>
                         <outlet property="registerPhoneView" destination="458-Jf-Rsp" id="4U0-C1-E65"/>
                         <outlet property="registerRepasswdField" destination="y4M-ld-rxj" id="FP5-ya-ijY"/>
+                        <outlet property="registerResetViewTitle" destination="qMQ-Re-O0z" id="x1c-23-bGj"/>
                         <outlet property="registerSendCodeBtn" destination="l8r-r6-aUX" id="dp7-x6-gSl"/>
                         <outlet property="segmentControl" destination="j2B-7x-njz" id="Ghf-iG-jI1"/>
                         <outlet property="wbLoginBtn" destination="G9G-PL-ZX4" id="Yz3-UV-Jtb"/>
