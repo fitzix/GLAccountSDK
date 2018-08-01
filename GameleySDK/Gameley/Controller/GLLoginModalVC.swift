@@ -23,12 +23,16 @@ class GLLoginModalVC: FitzPopUp {
     @IBOutlet weak var quickPasswdLabel: UILabel!
     
     // 注册view
+    @IBOutlet weak var registerPhoneView: UIView!
     @IBOutlet weak var registerPhoneField: UITextField!
     @IBOutlet weak var registerCodeField: UITextField!
     @IBOutlet weak var registerSendCodeBtn: UIButton!
     @IBOutlet weak var registerPasswdField: UITextField!
     @IBOutlet weak var registerRepasswdField: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
+    
+    
+    var currentTextField: UITextField?
     
     var registerPhoneFieldCheck: Bool {
         get {
@@ -137,6 +141,13 @@ class GLLoginModalVC: FitzPopUp {
         registerCodeField.setBottomBorder()
         registerPasswdField.setBottomBorder()
         registerRepasswdField.setBottomBorder()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(kbFrameChanged(_:)), name: .UIKeyboardWillChangeFrame, object: nil)
+//
+//        registerPhoneField.delegate = self
+//        registerCodeField.delegate = self
+//        registerRepasswdField.delegate = self
+//        registerRepasswdField.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -246,6 +257,12 @@ class GLLoginModalVC: FitzPopUp {
         }
     }
     
+    
+    @IBAction func registerPhoneAction(_ sender: UIButton) {
+        contentView.bringSubview(toFront: registerPhoneView)
+    }
+    
+    
     // 保存为UIImage
     open func getQuickInfoImg() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(quickRegisterView.bounds.size, true, 0.0)
@@ -257,6 +274,30 @@ class GLLoginModalVC: FitzPopUp {
         UIGraphicsEndImageContext()
         return quickInfo
     }
+    
+    // 弹出键盘
+//    @objc func kbFrameChanged(_ notification : Notification) {
+//        guard let curText = currentTextField else {
+//            return
+//        }
+//
+//        let info = notification.userInfo
+//        let kbRect = (info?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+//        print(contentView.frame.origin.y)
+//
+//        var offsetY = kbRect.origin.y - UIScreen.main.bounds.height
+//        if offsetY != 0 {
+//            offsetY = 0 - (contentView.frame.origin.y + curText.frame.origin.y)
+//        }
+//
+//        UIView.animate(withDuration: 0.3) {
+//            self.contentView.transform = CGAffineTransform(translationX: 0, y: offsetY)
+//        }
+//    }
+//
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        currentTextField = textField
+//    }
     
     //------------------------------手机注册--------------------------------
     @objc func updateTime(timer: Timer) {
@@ -274,14 +315,35 @@ class GLLoginModalVC: FitzPopUp {
             KRProgressHUD.showError(withMessage: "手机号格式错误")
             return
         }
-        GameleyApiHandler.shared.sendPhoneCode(params: ["phone": phoneNum.replacingOccurrences(of: "-", with: "")]) { [weak self] resp in
-            if resp.state != 0 {
+        
+        GameleyNetwork.shared.glRequest(.sendRegisterPhoneCode, parameters: ["phone": registerPhoneField.text!.replacingOccurrences(of: "-", with: "")], encoding: URLEncoding(destination: .queryString)) { [weak self] (resp: GLBaseResp) in
+            guard resp.state == 0 else {
                 KRProgressHUD.showError(withMessage: resp.msg)
-                self?.remainingSeconds = -1
                 return
             }
             KRProgressHUD.showSuccess()
             self?.isCounting = true
+        }
+    }
+    
+    @IBAction func registerPhone(_ sender: UIButton) {
+        guard registerPhoneFieldCheck, registerCodeFieldCheck, registerPasswdFieldCheck else{
+            KRProgressHUD.showError(withMessage: "格式错误")
+            return
+        }
+        GameleyNetwork.shared.glRequest(.phoneRegister, parameters: ["phone": registerPhoneField.text!.replacingOccurrences(of: "-", with: ""), "passwd": registerPasswdField.text!, "repasswd": registerRepasswdField.text!]) { [weak self] (resp: GLOauthResp) in
+            guard resp.state == 0, let info = resp.info, let token = info.token else {
+                KRProgressHUD.showError(withMessage: resp.msg)
+                return
+            }
+            KRProgressHUD.dismiss()
+            
+            LocalStore.save(key: .userToken, info: token)
+            
+            GameleyApiHandler.shared.getUserInfo { [weak self] userInfo in
+                self?.dismiss(animated: false, completion: nil)
+                GameleySDK.shared.didLogin(userInfo: userInfo)
+            }
         }
     }
     
